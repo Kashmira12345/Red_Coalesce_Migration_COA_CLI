@@ -1,0 +1,111 @@
+fileVersion: 1
+id: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+name: LOAD_TERRITORIES_TRADERS_NORTH
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3c056b1-40f4-40aa-8c09-eb5d87083da8
+          stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: TERRITORYID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e4b3198b-6f5b-457e-b16b-a4f3290ae36c
+          stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: TERRITORYDESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 48ca13f1-c742-479c-93c0-cc0adae57b6f
+          stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: REGIONID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1efe478e-f306-4b82-843d-17f41f80d931
+          stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bbc8cbb8-c03c-437a-aebb-fd4dd0217d99
+          stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: LOAD_TERRITORIES_TRADERS_NORTH
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

@@ -1,0 +1,92 @@
+fileVersion: 1
+id: 9784e365-7e0c-4afb-9cee-7554e0ec02d5
+name: LOAD_REGION_TRADERS_SOUTH
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e623507-3cd6-409f-b316-0eba0cca8c25
+          stepCounter: 9784e365-7e0c-4afb-9cee-7554e0ec02d5
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: REGIONID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3475a1b-d5fe-4dce-b7c9-4084ccb8d672
+          stepCounter: 9784e365-7e0c-4afb-9cee-7554e0ec02d5
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: REGIONDESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 739aed69-8fbf-4abb-8492-5b913ae21bef
+          stepCounter: 9784e365-7e0c-4afb-9cee-7554e0ec02d5
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9b9e77cf-4f2c-4211-ac4f-d6c6dc8d9778
+          stepCounter: 9784e365-7e0c-4afb-9cee-7554e0ec02d5
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: LOAD_REGION_TRADERS_SOUTH
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
