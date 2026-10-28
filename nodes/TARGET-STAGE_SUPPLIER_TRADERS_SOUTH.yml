@@ -9,7 +9,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "Migrated from WhereScape RED stage_supplier_traders_south"
+  description: "Migrated from WhereScape RED staging.stage_supplier_traders_south"
   isMultisource: false
   locationName: TARGET
   materializationType: table
@@ -21,12 +21,96 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 506d5a8f-f561-4b97-8cb9-e25e3d82d4cc
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of supplier_name"
+        name: HK_H_SUPPLIER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df3fca99-a72c-43e2-b7ca-8e56732b7e77
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"COMPANYNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90b7f717-5a5e-411e-b007-6349df224711
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: "RED nvarchar(40) <- load_suppliers_traders_south.companyname"
+        name: SUPPLIER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df3fca99-a72c-43e2-b7ca-8e56732b7e77
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f606533-82f6-4141-9247-d30313f6a692
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: VARCHAR(4000)
+        defaultValue: ""
+        description: "RED nvarchar(4000) <- load_suppliers_traders_south.homepage"
+        name: HOMEPAGE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 414bf7b7-a129-47fb-8838-cd31933b018b
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0d9c32ca-331b-4c16-a7cb-820f384e28a8
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: "RED nvarchar(15) <- load_suppliers_traders_south.country"
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42808483-66fb-4bc5-b279-bb48e958ced6
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 0e0fa092-a66c-44bc-87e8-a93382391605
           stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
+        description: "RED int <- load_suppliers_traders_south.supplierid"
         name: SUPPLIERID
         nullable: true
         primaryKey: false
@@ -42,75 +126,12 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 90b7f717-5a5e-411e-b007-6349df224711
-          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
-        config: {}
-        dataType: VARCHAR(40)
-        defaultValue: ""
-        description: ""
-        name: COMPANYNAME
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: df3fca99-a72c-43e2-b7ca-8e56732b7e77
-                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 84659113-86b9-403e-b2d7-5c68cccbdb0e
-          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
-        config: {}
-        dataType: VARCHAR(30)
-        defaultValue: ""
-        description: ""
-        name: CONTACTNAME
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 31ba4178-99a3-474b-85fd-2308c02acd3c
-                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: bd26f5ae-b6b2-4595-82c2-ef0b0e6a5538
-          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
-        config: {}
-        dataType: VARCHAR(30)
-        defaultValue: ""
-        description: ""
-        name: CONTACTTITLE
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 2c760bbe-1c94-4d86-acdb-657d1c67a986
-                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
           columnCounter: 7a1075c5-b4cf-41bc-b315-feebdbeff3e7
           stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
         config: {}
         dataType: VARCHAR(60)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(60) <- load_suppliers_traders_south.address"
         name: ADDRESS
         nullable: true
         primaryKey: false
@@ -131,7 +152,7 @@ operation:
         config: {}
         dataType: VARCHAR(15)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(15) <- load_suppliers_traders_south.city"
         name: CITY
         nullable: true
         primaryKey: false
@@ -152,7 +173,7 @@ operation:
         config: {}
         dataType: VARCHAR(15)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(15) <- load_suppliers_traders_south.region"
         name: REGION
         nullable: true
         primaryKey: false
@@ -173,7 +194,7 @@ operation:
         config: {}
         dataType: VARCHAR(10)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(10) <- load_suppliers_traders_south.postalcode"
         name: POSTALCODE
         nullable: true
         primaryKey: false
@@ -189,18 +210,39 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 0d9c32ca-331b-4c16-a7cb-820f384e28a8
+          columnCounter: 84659113-86b9-403e-b2d7-5c68cccbdb0e
           stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
         config: {}
-        dataType: VARCHAR(15)
+        dataType: VARCHAR(30)
         defaultValue: ""
-        description: ""
-        name: COUNTRY
+        description: "RED nvarchar(30) <- load_suppliers_traders_south.contactname"
+        name: CONTACTNAME
         nullable: true
         primaryKey: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 42808483-66fb-4bc5-b279-bb48e958ced6
+              - columnCounter: 31ba4178-99a3-474b-85fd-2308c02acd3c
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: bd26f5ae-b6b2-4595-82c2-ef0b0e6a5538
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: VARCHAR(30)
+        defaultValue: ""
+        description: "RED nvarchar(30) <- load_suppliers_traders_south.contacttitle"
+        name: CONTACTTITLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2c760bbe-1c94-4d86-acdb-657d1c67a986
                 stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
             transform: ""
         transform: ""
@@ -215,7 +257,7 @@ operation:
         config: {}
         dataType: VARCHAR(24)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(24) <- load_suppliers_traders_south.phone"
         name: PHONE
         nullable: true
         primaryKey: false
@@ -236,7 +278,7 @@ operation:
         config: {}
         dataType: VARCHAR(24)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(24) <- load_suppliers_traders_south.fax"
         name: FAX
         nullable: true
         primaryKey: false
@@ -252,20 +294,78 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 6f606533-82f6-4141-9247-d30313f6a692
+          columnCounter: 557d1f42-ac7a-4056-a210-697aed218f21
           stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
         config: {}
-        dataType: VARCHAR(4000)
+        dataType: VARCHAR(32)
         defaultValue: ""
-        description: ""
-        name: HOMEPAGE
-        nullable: true
+        description: "Change hash: MD5 of homepage"
+        name: DSS_CHANGE_HASH_SUPPLIER_HROC_TRADERS_SOUTH
+        nullable: false
         primaryKey: false
         sourceColumnReferences:
           - columnReferences:
               - columnCounter: 414bf7b7-a129-47fb-8838-cd31933b018b
                 stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
-            transform: ""
+            transform: "MD5(COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"HOMEPAGE\" AS VARCHAR)), ''))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fc4ef541-8719-4f8b-b44b-641a1ac934ad
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of country, supplierid, address, city, region, postalcode"
+        name: DSS_CHANGE_HASH_SUPPLIER_LROC_TRADERS_SOUTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 42808483-66fb-4bc5-b279-bb48e958ced6
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: bb841cd3-793a-44de-b885-527cad2b7206
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: 3533ab11-273b-4e82-ad2e-17032f4e7670
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: 1957d7a0-ea04-4a55-a61c-1f408114c311
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: f22ea409-04c8-432d-953f-d2b7e2d38ddc
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: 23022c12-e382-4186-9b2a-9881f1e96530
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: "MD5(CONCAT_WS('||', COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"COUNTRY\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"SUPPLIERID\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"ADDRESS\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"CITY\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"REGION\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"POSTALCODE\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 822bcb93-edfb-4388-824c-d4dd5f4399d0
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of contactname, contacttitle, phone, fax"
+        name: DSS_CHANGE_HASH_SUPPLIER_MROC_TRADERS_SOUTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 31ba4178-99a3-474b-85fd-2308c02acd3c
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: 2c760bbe-1c94-4d86-acdb-657d1c67a986
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: 74da795d-1e51-4784-bea5-1f2535d81244
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+              - columnCounter: 1f5ddae4-60b4-4c32-8f02-698d2d1bf5ee
+                stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: "MD5(CONCAT_WS('||', COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"CONTACTNAME\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"CONTACTTITLE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"PHONE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_SOUTH\".\"FAX\" AS VARCHAR)), '')))"
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -278,7 +378,7 @@ operation:
         config: {}
         dataType: VARCHAR(255)
         defaultValue: ""
-        description: "WhereScape dss_record_source"
+        description: "RED varchar(255) <- load_suppliers_traders_south.dss_record_source"
         name: DSS_RECORD_SOURCE
         nullable: true
         primaryKey: false
@@ -286,7 +386,7 @@ operation:
           - columnReferences:
               - columnCounter: 4c40d099-9821-4b5a-ad98-5a3093ac696d
                 stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
-            transform: "'TRADERS_SOUTH'"
+            transform: ""
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -299,7 +399,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: "WhereScape dss_load_date"
+        description: "RED datetime <- load_suppliers_traders_south.dss_load_date"
         name: DSS_LOAD_DATE
         nullable: true
         primaryKey: false
@@ -307,6 +407,25 @@ operation:
           - columnReferences:
               - columnCounter: 60951968-c4ea-4580-b439-c9627e1a06aa
                 stepCounter: 3c2fba60-486b-4fc6-98ea-8319b5738ef1
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 42d086a5-8060-480d-b812-4e16d4d33b8c
+          stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
             transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
         transform: ""
         uniqueKey: false

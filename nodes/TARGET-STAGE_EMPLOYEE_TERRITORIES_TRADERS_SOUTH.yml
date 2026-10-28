@@ -9,7 +9,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "Migrated from WhereScape RED stage_employee_territories_traders_south"
+  description: "Migrated from WhereScape RED staging.stage_employee_territories_traders_south"
   isMultisource: false
   locationName: TARGET
   materializationType: table
@@ -21,13 +21,78 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 7eb69fc2-d29d-4c61-809b-99d76e657fed
+          stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Link hash key: MD5 of employee_id, territory_id"
+        name: HK_L_EMPLOYEE_TERRITORIES
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f2b4674-3738-4c76-aad2-fcd849bbcd72
+                stepCounter: 056c17c5-39a8-40be-848f-09ee6d02072f
+              - columnCounter: 4923a298-1f38-4d4a-ab2f-cbd63b3f0104
+                stepCounter: 056c17c5-39a8-40be-848f-09ee6d02072f
+            transform: "MD5(CONCAT_WS('||', UPPER(COALESCE(TRIM(CAST(\"LOAD_EMPLOYEETERRITORIES_TRADERS_SOUTH\".\"EMPLOYEEID\" AS VARCHAR)), '')), UPPER(COALESCE(TRIM(CAST(\"LOAD_EMPLOYEETERRITORIES_TRADERS_SOUTH\".\"TERRITORYID\" AS VARCHAR)), ''))))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 182bb5e8-2d93-44a8-9624-cc47715f5a20
+          stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of employee_id"
+        name: HK_H_EMPLOYEE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6f2b4674-3738-4c76-aad2-fcd849bbcd72
+                stepCounter: 056c17c5-39a8-40be-848f-09ee6d02072f
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_EMPLOYEETERRITORIES_TRADERS_SOUTH\".\"EMPLOYEEID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1b96329-686f-443d-a0f5-bed1c9c3f241
+          stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of territory_id"
+        name: HK_H_TERRITORY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4923a298-1f38-4d4a-ab2f-cbd63b3f0104
+                stepCounter: 056c17c5-39a8-40be-848f-09ee6d02072f
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_EMPLOYEETERRITORIES_TRADERS_SOUTH\".\"TERRITORYID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 0c9cb133-3cc5-48cf-8a65-3d9b4a6d94ee
           stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
-        name: EMPLOYEEID
+        description: "RED int <- load_employeeterritories_traders_south.employeeid"
+        name: EMPLOYEE_ID
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -47,8 +112,8 @@ operation:
         config: {}
         dataType: VARCHAR(20)
         defaultValue: ""
-        description: ""
-        name: TERRITORYID
+        description: "RED nvarchar(20) <- load_employeeterritories_traders_south.territoryid"
+        name: TERRITORY_ID
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -68,7 +133,7 @@ operation:
         config: {}
         dataType: VARCHAR(255)
         defaultValue: ""
-        description: "WhereScape dss_record_source"
+        description: "RED varchar(255) <- load_employeeterritories_traders_south.dss_record_source"
         name: DSS_RECORD_SOURCE
         nullable: true
         primaryKey: false
@@ -76,7 +141,7 @@ operation:
           - columnReferences:
               - columnCounter: 7d1a113f-6c7e-45a7-ae31-94a0edc5f651
                 stepCounter: 056c17c5-39a8-40be-848f-09ee6d02072f
-            transform: "'TRADERS_SOUTH'"
+            transform: ""
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -89,7 +154,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: "WhereScape dss_load_date"
+        description: "RED datetime <- load_employeeterritories_traders_south.dss_load_date"
         name: DSS_LOAD_DATE
         nullable: true
         primaryKey: false
@@ -97,6 +162,25 @@ operation:
           - columnReferences:
               - columnCounter: 1ea887fe-21e5-4c1f-bee8-6ccf0294d5d6
                 stepCounter: 056c17c5-39a8-40be-848f-09ee6d02072f
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a67adbf3-1ce7-40a9-98c4-2b768c817b32
+          stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
             transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
         transform: ""
         uniqueKey: false

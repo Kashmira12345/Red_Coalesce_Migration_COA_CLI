@@ -9,7 +9,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "Migrated from WhereScape RED stage_customer_traders_north"
+  description: "Migrated from WhereScape RED staging.stage_customer_traders_north"
   isMultisource: false
   locationName: TARGET
   materializationType: table
@@ -21,12 +21,54 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: e35b7032-2b80-41fd-b790-77589dc18bd2
+          stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of customer_name"
+        name: HK_H_CUSTOMER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06a6a031-d6af-4439-8169-0b56d3bac68d
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"COMPANYNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9dc49caf-45d7-452b-a64e-03c1a37f4ad6
+          stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: "RED varchar(50) <- load_customers_traders_north.companyname"
+        name: CUSTOMER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06a6a031-d6af-4439-8169-0b56d3bac68d
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 4b96ae59-eefd-4fba-b3eb-38a3a559e69f
           stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
         config: {}
         dataType: VARCHAR(5)
         defaultValue: ""
-        description: ""
+        description: "RED nchar(5) <- load_customers_traders_north.customerid"
         name: CUSTOMERID
         nullable: true
         primaryKey: false
@@ -42,18 +84,18 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 9dc49caf-45d7-452b-a64e-03c1a37f4ad6
+          columnCounter: 0d2c1811-989a-4ca0-b586-640e319f036e
           stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
-        name: COMPANYNAME
+        description: "RED varchar(50) <- load_customers_traders_north.country"
+        name: COUNTRY
         nullable: true
         primaryKey: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 06a6a031-d6af-4439-8169-0b56d3bac68d
+              - columnCounter: 4b0baccf-2b16-48f2-9230-39f6b4c96388
                 stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
             transform: ""
         transform: ""
@@ -68,7 +110,7 @@ operation:
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(50) <- load_customers_traders_north.contactname"
         name: CONTACTNAME
         nullable: true
         primaryKey: false
@@ -89,7 +131,7 @@ operation:
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(50) <- load_customers_traders_north.contacttitle"
         name: CONTACTTITLE
         nullable: true
         primaryKey: false
@@ -110,7 +152,7 @@ operation:
         config: {}
         dataType: VARCHAR(60)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(60) <- load_customers_traders_north.address"
         name: ADDRESS
         nullable: true
         primaryKey: false
@@ -131,7 +173,7 @@ operation:
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(50) <- load_customers_traders_north.city"
         name: CITY
         nullable: true
         primaryKey: false
@@ -152,7 +194,7 @@ operation:
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(50) <- load_customers_traders_north.region"
         name: REGION
         nullable: true
         primaryKey: false
@@ -173,7 +215,7 @@ operation:
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(50) <- load_customers_traders_north.postalcode"
         name: POSTALCODE
         nullable: true
         primaryKey: false
@@ -189,33 +231,12 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 0d2c1811-989a-4ca0-b586-640e319f036e
-          stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
-        config: {}
-        dataType: VARCHAR(50)
-        defaultValue: ""
-        description: ""
-        name: COUNTRY
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 4b0baccf-2b16-48f2-9230-39f6b4c96388
-                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
           columnCounter: 121adc77-d404-407a-a82b-6788b3a85f91
           stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(50) <- load_customers_traders_north.phone"
         name: PHONE
         nullable: true
         primaryKey: false
@@ -236,7 +257,7 @@ operation:
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(50) <- load_customers_traders_north.fax"
         name: FAX
         nullable: true
         primaryKey: false
@@ -252,12 +273,70 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 7e87f437-db22-4ca4-99c3-7f8f4cb1bfba
+          stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of customerid"
+        name: DSS_CHANGE_HASH_CUSTOMER_LROC_TRADERS_NORTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2daee230-f3df-478a-bb3e-8462a7a3ef2f
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+            transform: "MD5(COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"CUSTOMERID\" AS VARCHAR)), ''))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26eafb80-4df1-45f7-bed7-2a3e8ed5c602
+          stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of country, contactname, contacttitle, address, city, region, postalcode, phone, fax"
+        name: DSS_CHANGE_HASH_CUSTOMER_MROC_TRADERS_NORTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b0baccf-2b16-48f2-9230-39f6b4c96388
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: ddf1dcf5-8f2a-4cdb-89fb-536bec06718f
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: f7aa35e3-091b-4cd2-86de-886600ff3703
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: c8a3d851-cbbe-4ddb-818e-77ded6a77f44
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: d135ee41-b798-4aaa-b0eb-9c4ef719e052
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: b29fe2fc-d5db-4143-bd3f-348e9be005d8
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: 391b7d8d-7803-4672-a1b1-b64bfdc012b2
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: 42ab96ff-40ef-4e7f-9976-12bb5f82a745
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: 26984cf3-b455-48c6-9836-819ab9ec1f27
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+            transform: "MD5(CONCAT_WS('||', COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"COUNTRY\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"CONTACTNAME\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"CONTACTTITLE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"ADDRESS\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"CITY\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"REGION\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"POSTALCODE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"PHONE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"FAX\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: b547a990-e248-46f5-b51a-e526425e0dc1
           stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
         config: {}
         dataType: VARCHAR(255)
         defaultValue: ""
-        description: "WhereScape dss_record_source"
+        description: "RED varchar(255) <- load_customers_traders_north.dss_record_source"
         name: DSS_RECORD_SOURCE
         nullable: true
         primaryKey: false
@@ -265,7 +344,7 @@ operation:
           - columnReferences:
               - columnCounter: 3a5f04b1-9c97-4031-abc2-e73a05a7276a
                 stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
-            transform: "'TRADERS_NORTH'"
+            transform: ""
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -278,7 +357,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: "WhereScape dss_load_date"
+        description: "RED datetime <- load_customers_traders_north.dss_load_date"
         name: DSS_LOAD_DATE
         nullable: true
         primaryKey: false
@@ -286,6 +365,25 @@ operation:
           - columnReferences:
               - columnCounter: 161adb1e-361d-4841-8b2b-ecf142a90df9
                 stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b978119e-cea5-4fd4-9612-565d1a4d423b
+          stepCounter: 01e19369-32db-470d-8ca1-69e29648d235
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
             transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
         transform: ""
         uniqueKey: false

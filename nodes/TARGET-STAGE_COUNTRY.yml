@@ -9,7 +9,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "Migrated from WhereScape RED stage_country"
+  description: "Migrated from WhereScape RED staging.stage_country"
   isMultisource: false
   locationName: TARGET
   materializationType: table
@@ -26,7 +26,7 @@ operation:
         config: {}
         dataType: VARCHAR(64)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(64) <- load_countrycodes_file_sources.name"
         name: NAME
         nullable: true
         primaryKey: false
@@ -47,7 +47,7 @@ operation:
         config: {}
         dataType: VARCHAR(4)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(4) <- load_countrycodes_file_sources.alpha_2"
         name: ALPHA_2
         nullable: true
         primaryKey: false
@@ -68,7 +68,7 @@ operation:
         config: {}
         dataType: VARCHAR(4)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(4) <- load_countrycodes_file_sources.alpha_3"
         name: ALPHA_3
         nullable: true
         primaryKey: false
@@ -89,7 +89,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
+        description: "RED int <- load_countrycodes_file_sources.country_code"
         name: COUNTRY_CODE
         nullable: true
         primaryKey: false
@@ -110,7 +110,7 @@ operation:
         config: {}
         dataType: VARCHAR(16)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(16) <- load_countrycodes_file_sources.iso_3166_2"
         name: ISO_3166_2
         nullable: true
         primaryKey: false
@@ -131,7 +131,7 @@ operation:
         config: {}
         dataType: VARCHAR(16)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(16) <- load_countrycodes_file_sources.region"
         name: REGION
         nullable: true
         primaryKey: false
@@ -152,7 +152,7 @@ operation:
         config: {}
         dataType: VARCHAR(32)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(32) <- load_countrycodes_file_sources.sub_region"
         name: SUB_REGION
         nullable: true
         primaryKey: false
@@ -173,7 +173,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
+        description: "RED int <- load_countrycodes_file_sources.region_code"
         name: REGION_CODE
         nullable: true
         primaryKey: false
@@ -194,7 +194,7 @@ operation:
         config: {}
         dataType: VARCHAR(8)
         defaultValue: ""
-        description: ""
+        description: "RED varchar(8) <- load_countrycodes_file_sources.sub_region_code"
         name: SUB_REGION_CODE
         nullable: true
         primaryKey: false
@@ -215,7 +215,7 @@ operation:
         config: {}
         dataType: VARCHAR(255)
         defaultValue: ""
-        description: "WhereScape dss_record_source"
+        description: "RED varchar(255) <- load_countrycodes_file_sources.dss_record_source"
         name: DSS_RECORD_SOURCE
         nullable: true
         primaryKey: false
@@ -223,7 +223,7 @@ operation:
           - columnReferences:
               - columnCounter: 98178192-f6e7-4736-b0c7-ffd503badea8
                 stepCounter: 3aff12f5-331b-41c5-b046-bdc410dec85a
-            transform: "'FILE_SOURCES'"
+            transform: ""
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -236,7 +236,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: "WhereScape dss_load_date"
+        description: "RED datetime <- load_countrycodes_file_sources.dss_load_date"
         name: DSS_LOAD_DATE
         nullable: true
         primaryKey: false
@@ -244,6 +244,25 @@ operation:
           - columnReferences:
               - columnCounter: 500c2bdc-a312-47b4-9b53-5fde20616565
                 stepCounter: 3aff12f5-331b-41c5-b046-bdc410dec85a
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a26f72ed-95d5-40d5-9f51-7fca4c8f9d7c
+          stepCounter: ae2745c0-bd3e-4e58-b6d2-7a911497e801
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
             transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
         transform: ""
         uniqueKey: false

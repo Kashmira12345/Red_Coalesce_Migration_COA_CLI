@@ -9,7 +9,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "Migrated from WhereScape RED stage_region_traders_north"
+  description: "Migrated from WhereScape RED staging.stage_region_traders_north"
   isMultisource: false
   locationName: TARGET
   materializationType: table
@@ -21,13 +21,34 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 29953d52-ad27-4c8e-8605-d733c06f7fcc
+          stepCounter: 4c3358bb-1820-442d-bd9c-e7fe40de3d02
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of region_id"
+        name: HK_H_REGION
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: da04456f-61bc-486f-ba63-383fea187cda
+                stepCounter: d9072c08-59be-4c49-a33e-7bcb7bf75bd8
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_REGION_TRADERS_NORTH\".\"REGIONID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: d859a225-044d-4722-b0c2-43af277ffd3f
           stepCounter: 4c3358bb-1820-442d-bd9c-e7fe40de3d02
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
-        name: REGIONID
+        description: "RED int <- load_region_traders_north.regionid"
+        name: REGION_ID
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -47,7 +68,7 @@ operation:
         config: {}
         dataType: VARCHAR(50)
         defaultValue: ""
-        description: ""
+        description: "RED nchar(50) <- load_region_traders_north.regiondescription"
         name: REGIONDESCRIPTION
         nullable: true
         primaryKey: false
@@ -63,12 +84,33 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 53c13e79-0b15-4fbe-920c-498ed2f9a277
+          stepCounter: 4c3358bb-1820-442d-bd9c-e7fe40de3d02
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of regiondescription"
+        name: DSS_CHANGE_HASH_REGION_LROC_TRADERS_NORTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bfa46e99-f4fe-48a3-906f-122a97b35c85
+                stepCounter: d9072c08-59be-4c49-a33e-7bcb7bf75bd8
+            transform: "MD5(COALESCE(TRIM(CAST(\"LOAD_REGION_TRADERS_NORTH\".\"REGIONDESCRIPTION\" AS VARCHAR)), ''))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 148e76d0-b643-4e6a-a435-62e685b7118f
           stepCounter: 4c3358bb-1820-442d-bd9c-e7fe40de3d02
         config: {}
         dataType: VARCHAR(255)
         defaultValue: ""
-        description: "WhereScape dss_record_source"
+        description: "RED varchar(255) <- load_region_traders_north.dss_record_source"
         name: DSS_RECORD_SOURCE
         nullable: true
         primaryKey: false
@@ -76,7 +118,7 @@ operation:
           - columnReferences:
               - columnCounter: bb089540-96ec-4b32-b82d-b7bdce779d37
                 stepCounter: d9072c08-59be-4c49-a33e-7bcb7bf75bd8
-            transform: "'TRADERS_NORTH'"
+            transform: ""
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -89,7 +131,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: "WhereScape dss_load_date"
+        description: "RED datetime <- load_region_traders_north.dss_load_date"
         name: DSS_LOAD_DATE
         nullable: true
         primaryKey: false
@@ -97,6 +139,25 @@ operation:
           - columnReferences:
               - columnCounter: 4ae6a048-3b7e-4a8f-aabe-57a61865959d
                 stepCounter: d9072c08-59be-4c49-a33e-7bcb7bf75bd8
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3c319469-1219-4f26-8afe-9189f719b98b
+          stepCounter: 4c3358bb-1820-442d-bd9c-e7fe40de3d02
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
             transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
         transform: ""
         uniqueKey: false

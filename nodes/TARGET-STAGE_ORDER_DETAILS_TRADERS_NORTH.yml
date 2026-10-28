@@ -9,7 +9,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "Migrated from WhereScape RED stage_order_details_traders_north"
+  description: "Migrated from WhereScape RED staging.stage_order_details_traders_north"
   isMultisource: false
   locationName: TARGET
   materializationType: table
@@ -21,19 +21,84 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 12655fbd-dc7f-4f5e-9587-1f9e03315e21
+          columnCounter: f0a52771-11b0-45d6-b9e0-6cf532bed283
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Link hash key: MD5 of order_number, product_name"
+        name: HK_L_ORDER_DETAILS
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c501b5ff-bf0f-4d6b-a41d-ad39db6eea1c
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+              - columnCounter: 58f9ca15-c06b-47e8-8b9e-b4e20e75f060
+                stepCounter: 131ede35-623b-473e-85c1-3b9659d5e6cc
+            transform: "MD5(CONCAT_WS('||', UPPER(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_NORTH\".\"ORDERID\" AS VARCHAR)), '')), UPPER(COALESCE(TRIM(CAST(\"LOAD_PRODUCTS_TRADERS_NORTH\".\"PRODUCTNAME\" AS VARCHAR)), ''))))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 86304574-3a23-428e-9a18-3910c57e8d5b
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of order_number"
+        name: HK_H_ORDER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c501b5ff-bf0f-4d6b-a41d-ad39db6eea1c
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_NORTH\".\"ORDERID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 13fab1e1-2d63-4423-8cf1-809f3ae3f479
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of product_name"
+        name: HK_H_PRODUCT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 58f9ca15-c06b-47e8-8b9e-b4e20e75f060
+                stepCounter: 131ede35-623b-473e-85c1-3b9659d5e6cc
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_PRODUCTS_TRADERS_NORTH\".\"PRODUCTNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 428cd8dc-19dc-4314-9aaa-053e60a906a8
           stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
-        name: ORDERID
+        description: "RED int <- load_orders_traders_north.orderid"
+        name: ORDER_NUMBER
         nullable: true
         primaryKey: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: de89c228-0a60-4492-9c25-62a45ca5af5c
-                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+              - columnCounter: c501b5ff-bf0f-4d6b-a41d-ad39db6eea1c
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
             transform: ""
         transform: ""
         uniqueKey: false
@@ -42,19 +107,19 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 1d47638c-b9f1-4e08-b133-631cdf666c07
+          columnCounter: 66b20d56-acae-493b-8b59-5f82e3cbe84e
           stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: VARCHAR(40)
         defaultValue: ""
-        description: ""
-        name: ORDERLINENUMBER
+        description: "RED nvarchar(40) <- load_products_traders_north.productname"
+        name: PRODUCT_NAME
         nullable: true
         primaryKey: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 94c38ab3-4d08-478d-9f52-d8697f553882
-                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+              - columnCounter: 58f9ca15-c06b-47e8-8b9e-b4e20e75f060
+                stepCounter: 131ede35-623b-473e-85c1-3b9659d5e6cc
             transform: ""
         transform: ""
         uniqueKey: false
@@ -63,19 +128,19 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 951103e9-9ae9-469a-92ca-d13814d9000e
+          columnCounter: 3c9fc77d-03f2-4444-a0f4-6b371433bf98
           stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
         config: {}
-        dataType: NUMBER(38,0)
+        dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: ""
-        name: PRODUCTID
+        description: "RED datetime2 <- load_orders_traders_north.orderdate"
+        name: ORDERDATE
         nullable: true
         primaryKey: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 64e5095d-9eb7-47a2-9e8f-1ed142adf594
-                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+              - columnCounter: 8bac3e1b-cb54-4ff0-b513-2c80650fb6c1
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
             transform: ""
         transform: ""
         uniqueKey: false
@@ -89,7 +154,7 @@ operation:
         config: {}
         dataType: NUMBER(19,4)
         defaultValue: ""
-        description: ""
+        description: "RED money <- load_order_details_traders_north.unitprice"
         name: UNITPRICE
         nullable: true
         primaryKey: false
@@ -110,7 +175,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
+        description: "RED int <- load_order_details_traders_north.quantity"
         name: QUANTITY
         nullable: true
         primaryKey: false
@@ -131,7 +196,7 @@ operation:
         config: {}
         dataType: FLOAT
         defaultValue: ""
-        description: ""
+        description: "RED real <- load_order_details_traders_north.discount"
         name: DISCOUNT
         nullable: true
         primaryKey: false
@@ -147,12 +212,39 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: a7d5e830-1051-4936-860f-e59c3d7fc268
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of orderdate, unitprice, quantity, discount"
+        name: DSS_CHANGE_HASH_ORDER_DETAILS_TRANSACT_TRADERS_NORTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8bac3e1b-cb54-4ff0-b513-2c80650fb6c1
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+              - columnCounter: e07a0509-6be3-4daf-ae05-aceae67a1423
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+              - columnCounter: 5bf3bb36-30bb-42b4-8788-3764a69b2ddb
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+              - columnCounter: 438487da-688b-4812-8ff9-baa7f457e350
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: "MD5(CONCAT_WS('||', COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_NORTH\".\"ORDERDATE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDER_DETAILS_TRADERS_NORTH\".\"UNITPRICE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDER_DETAILS_TRADERS_NORTH\".\"QUANTITY\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDER_DETAILS_TRADERS_NORTH\".\"DISCOUNT\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 9e851257-8304-4d7b-888f-c457e5de4523
           stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
         config: {}
         dataType: VARCHAR(255)
         defaultValue: ""
-        description: "WhereScape dss_record_source"
+        description: "RED varchar(255) <- load_order_details_traders_north.dss_record_source"
         name: DSS_RECORD_SOURCE
         nullable: true
         primaryKey: false
@@ -160,7 +252,7 @@ operation:
           - columnReferences:
               - columnCounter: fb9a7f24-bb09-4906-ba29-2cfdc661c6f1
                 stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
-            transform: "'TRADERS_NORTH'"
+            transform: ""
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -173,7 +265,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: "WhereScape dss_load_date"
+        description: "RED datetime <- load_order_details_traders_north.dss_load_date"
         name: DSS_LOAD_DATE
         nullable: true
         primaryKey: false
@@ -181,6 +273,25 @@ operation:
           - columnReferences:
               - columnCounter: c6d789d7-5c7b-4890-90ce-edf8054a0042
                 stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ebaba5c6-3740-42b9-a84a-2adcca110b9f
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
             transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
         transform: ""
         uniqueKey: false
@@ -192,10 +303,18 @@ operation:
           customSQL: ""
         dependencies:
           - locationName: SRC
+            nodeName: LOAD_ORDERS_TRADERS_NORTH
+          - locationName: SRC
             nodeName: LOAD_ORDER_DETAILS_TRADERS_NORTH
+          - locationName: SRC
+            nodeName: LOAD_PRODUCTS_TRADERS_NORTH
         join:
           joinCondition: |-
             FROM {{ ref('SRC', 'LOAD_ORDER_DETAILS_TRADERS_NORTH') }} "LOAD_ORDER_DETAILS_TRADERS_NORTH"
+            INNER JOIN {{ ref('SRC', 'LOAD_ORDERS_TRADERS_NORTH') }} "LOAD_ORDERS_TRADERS_NORTH"
+            ON "LOAD_ORDER_DETAILS_TRADERS_NORTH"."ORDERID" = "LOAD_ORDERS_TRADERS_NORTH"."ORDERID"
+            INNER JOIN {{ ref('SRC', 'LOAD_PRODUCTS_TRADERS_NORTH') }} "LOAD_PRODUCTS_TRADERS_NORTH"
+            ON "LOAD_ORDER_DETAILS_TRADERS_NORTH"."PRODUCTID" = "LOAD_PRODUCTS_TRADERS_NORTH"."PRODUCTID"
         name: STAGE_ORDER_DETAILS_TRADERS_NORTH
         noLinkRefs: []
   name: STAGE_ORDER_DETAILS_TRADERS_NORTH

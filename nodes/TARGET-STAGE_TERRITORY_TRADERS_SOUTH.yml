@@ -1,0 +1,184 @@
+fileVersion: 1
+id: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+name: STAGE_TERRITORY_TRADERS_SOUTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED staging.stage_territory_traders_south"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: eb019516-dcda-4809-8b82-ed768c6e16e0
+          stepCounter: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of territory_id"
+        name: HK_H_TERRITORY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dad92715-ed49-47a9-9115-dfa060af9724
+                stepCounter: 3833348f-05fc-4ba4-811d-2d6be3c63773
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_TERRITORIES_TRADERS_SOUTH\".\"TERRITORYID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b3f61b3-a3d9-4767-a76d-7270d6368ef0
+          stepCounter: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: "RED nvarchar(20) <- load_territories_traders_south.territoryid"
+        name: TERRITORY_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dad92715-ed49-47a9-9115-dfa060af9724
+                stepCounter: 3833348f-05fc-4ba4-811d-2d6be3c63773
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ebca7633-89bd-48dc-831d-e2b843ca2b07
+          stepCounter: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: "RED nchar(50) <- load_territories_traders_south.territorydescription"
+        name: TERRITORYDESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b96bf05-1748-45fe-96db-7ccb322cde91
+                stepCounter: 3833348f-05fc-4ba4-811d-2d6be3c63773
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6627db4f-aef7-421e-a261-4043e8c3e857
+          stepCounter: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of territorydescription"
+        name: DSS_CHANGE_HASH_TERRITORY_LROC_TRADERS_SOUTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4b96bf05-1748-45fe-96db-7ccb322cde91
+                stepCounter: 3833348f-05fc-4ba4-811d-2d6be3c63773
+            transform: "MD5(COALESCE(TRIM(CAST(\"LOAD_TERRITORIES_TRADERS_SOUTH\".\"TERRITORYDESCRIPTION\" AS VARCHAR)), ''))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c045ae7b-c387-4707-a039-eb8a92d06ebf
+          stepCounter: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "RED varchar(255) <- load_territories_traders_south.dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8f9387a7-ef02-47b2-ba2e-f793a262add5
+                stepCounter: 3833348f-05fc-4ba4-811d-2d6be3c63773
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2e45057d-5a2f-4fbb-afe9-5f8b6ae2f96f
+          stepCounter: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "RED datetime <- load_territories_traders_south.dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f819a83d-ac59-485d-bc02-23e94f4f00a8
+                stepCounter: 3833348f-05fc-4ba4-811d-2d6be3c63773
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7138051e-c3cf-4d45-8926-affe9a74ba9f
+          stepCounter: 52f9f430-1d49-441b-a3c8-ac26814a3ed2
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_TERRITORIES_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_TERRITORIES_TRADERS_SOUTH') }} "LOAD_TERRITORIES_TRADERS_SOUTH"
+        name: STAGE_TERRITORY_TRADERS_SOUTH
+        noLinkRefs: []
+  name: STAGE_TERRITORY_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

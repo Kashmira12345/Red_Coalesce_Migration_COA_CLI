@@ -9,7 +9,7 @@ operation:
     truncateBefore: true
   database: ""
   deployEnabled: true
-  description: "Migrated from WhereScape RED stage_order_traders_south"
+  description: "Migrated from WhereScape RED staging.stage_order_traders_south"
   isMultisource: false
   locationName: TARGET
   materializationType: table
@@ -21,13 +21,34 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 37739430-7fae-4c84-b23d-c9a6c5946c9a
+          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of order_number"
+        name: HK_H_ORDER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5676cf21-8814-4091-9590-1643ae73d380
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"ORDERID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 82219475-2bab-4a26-9a1f-a5697ee061e1
           stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
-        name: ORDERID
+        description: "RED int <- load_orders_traders_south.orderid"
+        name: ORDER_NUMBER
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -42,12 +63,33 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 50151463-05b7-4ad6-bcfa-9f246a336610
+          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+        config: {}
+        dataType: NUMBER(38,4)
+        defaultValue: ""
+        description: "RED money <- load_orders_traders_south.freight"
+        name: FREIGHT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19a7a600-ae6d-4ab3-bca9-f2b6e0c511c3
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 1e593c0e-33b6-496d-9d3f-a33bf9d111dd
           stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
         config: {}
         dataType: VARCHAR(5)
         defaultValue: ""
-        description: ""
+        description: "RED nchar(5) <- load_orders_traders_south.customerid"
         name: CUSTOMERID
         nullable: true
         primaryKey: false
@@ -68,7 +110,7 @@ operation:
         config: {}
         dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
+        description: "RED int <- load_orders_traders_south.employeeid"
         name: EMPLOYEEID
         nullable: true
         primaryKey: false
@@ -84,18 +126,18 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: ac211ef4-5a60-43fb-ab62-071e5bcdc587
+          columnCounter: d9c01400-2c7e-43d2-8ec4-5b76689e346e
           stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
         config: {}
-        dataType: TIMESTAMP_NTZ(9)
+        dataType: NUMBER(38,0)
         defaultValue: ""
-        description: ""
-        name: ORDERDATE
+        description: "RED int <- load_orders_traders_south.shipvia"
+        name: SHIPVIA
         nullable: true
         primaryKey: false
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 927c25b4-f353-467c-b5d0-8d119d7e4548
+              - columnCounter: ecbc48ee-a031-44d3-a6b9-c91177789968
                 stepCounter: 8feab388-3d73-4732-a962-8862b322f193
             transform: ""
         transform: ""
@@ -110,7 +152,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: ""
+        description: "RED datetime2 <- load_orders_traders_south.requireddate"
         name: REQUIREDDATE
         nullable: true
         primaryKey: false
@@ -131,7 +173,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: ""
+        description: "RED datetime2 <- load_orders_traders_south.shippeddate"
         name: SHIPPEDDATE
         nullable: true
         primaryKey: false
@@ -147,54 +189,12 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: d9c01400-2c7e-43d2-8ec4-5b76689e346e
-          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
-        config: {}
-        dataType: NUMBER(38,0)
-        defaultValue: ""
-        description: ""
-        name: SHIPVIA
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: ecbc48ee-a031-44d3-a6b9-c91177789968
-                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 50151463-05b7-4ad6-bcfa-9f246a336610
-          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
-        config: {}
-        dataType: NUMBER(38,4)
-        defaultValue: ""
-        description: ""
-        name: FREIGHT
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences:
-              - columnCounter: 19a7a600-ae6d-4ab3-bca9-f2b6e0c511c3
-                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
           columnCounter: 5fdd7eaa-7f82-4bbe-ac92-5b5d8af78309
           stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
         config: {}
         dataType: VARCHAR(40)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(40) <- load_orders_traders_south.shipname"
         name: SHIPNAME
         nullable: true
         primaryKey: false
@@ -215,7 +215,7 @@ operation:
         config: {}
         dataType: VARCHAR(60)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(60) <- load_orders_traders_south.shipaddress"
         name: SHIPADDRESS
         nullable: true
         primaryKey: false
@@ -236,7 +236,7 @@ operation:
         config: {}
         dataType: VARCHAR(15)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(15) <- load_orders_traders_south.shipcity"
         name: SHIPCITY
         nullable: true
         primaryKey: false
@@ -257,7 +257,7 @@ operation:
         config: {}
         dataType: VARCHAR(15)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(15) <- load_orders_traders_south.shipregion"
         name: SHIPREGION
         nullable: true
         primaryKey: false
@@ -278,7 +278,7 @@ operation:
         config: {}
         dataType: VARCHAR(10)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(10) <- load_orders_traders_south.shippostalcode"
         name: SHIPPOSTALCODE
         nullable: true
         primaryKey: false
@@ -299,7 +299,7 @@ operation:
         config: {}
         dataType: VARCHAR(15)
         defaultValue: ""
-        description: ""
+        description: "RED nvarchar(15) <- load_orders_traders_south.shipcountry"
         name: SHIPCOUNTRY
         nullable: true
         primaryKey: false
@@ -315,12 +315,93 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
+          columnCounter: 1ef196fd-619f-4aa7-81c4-f33325026c2e
+          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of freight"
+        name: DSS_CHANGE_HASH_ORDER_HROC_TRADERS_SOUTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19a7a600-ae6d-4ab3-bca9-f2b6e0c511c3
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+            transform: "MD5(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"FREIGHT\" AS VARCHAR)), ''))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 246db223-ea8a-4aa8-9776-b5fd2bd4e00d
+          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of customerid, employeeid, shipvia"
+        name: DSS_CHANGE_HASH_ORDER_LROC_TRADERS_SOUTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2bb6bad1-1bb1-4b77-8a32-2403a460f207
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: b17e7853-c040-4a6d-9e6f-a4e1c918cc56
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: ecbc48ee-a031-44d3-a6b9-c91177789968
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+            transform: "MD5(CONCAT_WS('||', COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"CUSTOMERID\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"EMPLOYEEID\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPVIA\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6cb2a917-c15c-4c35-a941-a1f373bdba44
+          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of requireddate, shippeddate, shipname, shipaddress, shipcity, shipregion, shippostalcode, shipcountry"
+        name: DSS_CHANGE_HASH_ORDER_MROC_TRADERS_SOUTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0fda841f-1867-4ab2-805a-502528720672
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: e648a7fc-f542-493c-bc21-240418c47dc8
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: 83e9c259-8b00-46cc-bf04-d4f30e779044
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: 7fa6d6e9-5880-47d3-a568-79cb99f25d75
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: ae7e005c-69f6-40ec-bd22-5482aaaa012f
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: 7d1ccb33-dff7-4736-a5cf-b38403c16696
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: 2b3fb540-e996-4008-ab5a-83d354e05281
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+              - columnCounter: 8cd92070-09e7-4f0e-adb6-aca8f0c47d0d
+                stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+            transform: "MD5(CONCAT_WS('||', COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"REQUIREDDATE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPPEDDATE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPNAME\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPADDRESS\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPCITY\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPREGION\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPPOSTALCODE\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_SOUTH\".\"SHIPCOUNTRY\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
           columnCounter: 425400a2-baf8-431a-963d-c2a48338a028
           stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
         config: {}
         dataType: VARCHAR(255)
         defaultValue: ""
-        description: "WhereScape dss_record_source"
+        description: "RED varchar(255) <- load_orders_traders_south.dss_record_source"
         name: DSS_RECORD_SOURCE
         nullable: true
         primaryKey: false
@@ -328,7 +409,7 @@ operation:
           - columnReferences:
               - columnCounter: 3e54a219-6518-4ad3-8264-11977757bfd5
                 stepCounter: 8feab388-3d73-4732-a962-8862b322f193
-            transform: "'TRADERS_SOUTH'"
+            transform: ""
         transform: ""
         uniqueKey: false
       - acceptedValues:
@@ -341,7 +422,7 @@ operation:
         config: {}
         dataType: TIMESTAMP_NTZ(9)
         defaultValue: ""
-        description: "WhereScape dss_load_date"
+        description: "RED datetime <- load_orders_traders_south.dss_load_date"
         name: DSS_LOAD_DATE
         nullable: true
         primaryKey: false
@@ -349,6 +430,25 @@ operation:
           - columnReferences:
               - columnCounter: 03936966-f299-4f76-88ff-3cd36a080433
                 stepCounter: 8feab388-3d73-4732-a962-8862b322f193
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a3ceb49a-55d0-4de8-aa05-23b548e879b1
+          stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
             transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
         transform: ""
         uniqueKey: false
