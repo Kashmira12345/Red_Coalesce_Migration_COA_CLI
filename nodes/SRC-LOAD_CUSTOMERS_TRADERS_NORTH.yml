@@ -1,0 +1,263 @@
+fileVersion: 1
+id: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+name: LOAD_CUSTOMERS_TRADERS_NORTH
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2daee230-f3df-478a-bb3e-8462a7a3ef2f
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(5)
+        defaultValue: ""
+        description: ""
+        name: CUSTOMERID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 06a6a031-d6af-4439-8169-0b56d3bac68d
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: COMPANYNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ddf1dcf5-8f2a-4cdb-89fb-536bec06718f
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: CONTACTNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f7aa35e3-091b-4cd2-86de-886600ff3703
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: CONTACTTITLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8a3d851-cbbe-4ddb-818e-77ded6a77f44
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(60)
+        defaultValue: ""
+        description: ""
+        name: ADDRESS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d135ee41-b798-4aaa-b0eb-9c4ef719e052
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: CITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b29fe2fc-d5db-4143-bd3f-348e9be005d8
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: REGION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 391b7d8d-7803-4672-a1b1-b64bfdc012b2
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: POSTALCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 4b0baccf-2b16-48f2-9230-39f6b4c96388
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 42ab96ff-40ef-4e7f-9976-12bb5f82a745
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: PHONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26984cf3-b455-48c6-9836-819ab9ec1f27
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: FAX
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a5f04b1-9c97-4031-abc2-e73a05a7276a
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 161adb1e-361d-4841-8b2b-ecf142a90df9
+          stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: LOAD_CUSTOMERS_TRADERS_NORTH
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

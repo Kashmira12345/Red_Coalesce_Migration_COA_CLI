@@ -1,0 +1,244 @@
+fileVersion: 1
+id: e0e73aaf-1133-49d3-964d-c77db985ca0e
+name: LOAD_PRODUCTS_TRADERS_SOUTH
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20709ad8-bec3-4220-a328-61c46b0508ac
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: PRODUCTID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0c563ff6-d2dc-49f3-a2de-11ebb8e602f6
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: ""
+        name: PRODUCTNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 66f79513-bf79-455a-831b-6b8a20aaac4c
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: SUPPLIERID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9daae538-a4dc-498a-8545-1a7a96282689
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: CATEGORYID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 991181a3-7343-4411-8e4c-b818276e7635
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: QUANTITYPERUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8630ca77-cdc3-47f9-8317-b282230fa1b8
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: NUMBER(38,4)
+        defaultValue: ""
+        description: ""
+        name: UNITPRICE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee029848-dde3-4d15-9927-9e14a84bc7dd
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: UNITSINSTOCK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a6cd6e5b-f325-4d1d-9a2f-241196aaa846
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: UNITSONORDER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8dc9a065-003a-4713-bcb9-79bd6d1edded
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: REORDERLEVEL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57f585ea-8a0f-4098-b09d-9680859aa5b4
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: ""
+        name: DISCONTINUED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d7a0fcb6-2d22-45ff-a967-240d37d6fecd
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a5150076-8be5-405e-bb16-ddf56d98ad62
+          stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: LOAD_PRODUCTS_TRADERS_SOUTH
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node

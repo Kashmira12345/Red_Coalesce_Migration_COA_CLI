@@ -1,0 +1,92 @@
+fileVersion: 1
+id: dd7ce668-3589-4cda-a9ed-f4594ac77cee
+name: LOAD_EMPLOYEETERRITORIES_TRADERS_NORTH
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 27d09193-a729-45af-978b-5a75a433e69e
+          stepCounter: dd7ce668-3589-4cda-a9ed-f4594ac77cee
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: EMPLOYEEID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ba304ae-4548-4cf3-90ba-e2e8a73041a0
+          stepCounter: dd7ce668-3589-4cda-a9ed-f4594ac77cee
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: TERRITORYID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 660311dd-3c2e-46ed-a0c0-0a684d7cc071
+          stepCounter: dd7ce668-3589-4cda-a9ed-f4594ac77cee
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a7bc71eb-7a0c-4d49-9083-0b3c13b118c1
+          stepCounter: dd7ce668-3589-4cda-a9ed-f4594ac77cee
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: LOAD_EMPLOYEETERRITORIES_TRADERS_NORTH
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
