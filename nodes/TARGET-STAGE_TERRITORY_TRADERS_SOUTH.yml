@@ -158,7 +158,7 @@ operation:
         primaryKey: false
         sourceColumnReferences:
           - columnReferences: []
-            transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
         transform: ""
         uniqueKey: false
     cteString: ""
