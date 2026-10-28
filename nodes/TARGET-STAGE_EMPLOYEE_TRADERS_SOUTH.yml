@@ -1,0 +1,396 @@
+fileVersion: 1
+id: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+name: STAGE_EMPLOYEE_TRADERS_SOUTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED stage_employee_traders_south"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 94b1b732-0f50-4fec-965e-66642b5378b0
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: EMPLOYEEID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8db5dde3-375c-451b-bcd8-7da770d00d80
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b143834f-4288-4229-b372-f579013eff32
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: LASTNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d80a6bbd-3a43-4674-b376-aa8cd588d4bb
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aadccd6a-d3d6-4718-b70d-f95ff0dd8f00
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: FIRSTNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 2a2c6eef-1d47-4f22-b94f-eb66ab8030f8
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d3fa5a47-a4c6-4d3e-a7a7-8cddde72c25d
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: TITLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 94e96704-ab3b-49a2-a451-f376d602a286
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: af5ccbf8-1d47-4ef9-b0dd-c2b4feb64dcb
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: TITLEOFCOURTESY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 04d3e862-c3dd-495c-bd0f-038597eb2d36
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18ea4e4c-36cd-4721-8a72-ac0c223d66b0
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: BIRTHDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cbb8f8df-b262-400f-99d3-b721c3addb55
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26829edf-b64a-4b24-b305-dcbcf62ea4ad
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: HIREDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 85924f1c-adf4-4638-9d0e-3ac0066a4d18
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c32b288c-7a9e-4e4c-a152-8b61e07f7758
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(60)
+        defaultValue: ""
+        description: ""
+        name: ADDRESS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f9019274-d590-4a56-ab32-f0ec20511da5
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74210bae-9e35-4094-b114-193953b6172a
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: CITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4373720-be99-476f-8b3d-cd1aad88f9fb
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7149acc8-7ac1-453e-b1bd-8bf41628bdb1
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: REGION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 684096d1-ee57-4a62-a7db-5b07a5df9285
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c3f6f41-7d48-41c1-b801-4e4892121052
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: POSTALCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 62242335-43f1-4f1c-9dd9-32026d025c1b
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 481de107-c4e8-42f7-a8dc-18c304535caf
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7309bf9c-2f69-465f-a243-2bea80c40377
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6de75940-c552-43bf-9bd3-c9691dd5ce5d
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: HOMEPHONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74c121fa-0bb0-4353-9906-b45df85c23c5
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 474e944a-cf1a-48a7-b416-25f69f9f953d
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: EXTENSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b588258a-b9bb-4be0-a7d4-079afab5bd16
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3a03b87b-7e6f-45bf-a5e8-62dd3ba7127f
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: REPORTSTO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64f89140-385d-4ddf-9352-d497dedd9a3f
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f37dbe9d-1eb2-4976-a748-aa58783484ab
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "WhereScape dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7e32dd8-8c2d-4f72-9189-303e3e1404d9
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: "'TRADERS_SOUTH'"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6562e778-c4a3-4085-96e8-256dc66450a8
+          stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "WhereScape dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: acb3aa12-bc1f-4a7c-a9f6-3a12552b60e3
+                stepCounter: 67ca3d31-3ec6-442c-aa3e-7f0c8481d1f2
+            transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_EMPLOYEES_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_EMPLOYEES_TRADERS_SOUTH') }} "LOAD_EMPLOYEES_TRADERS_SOUTH"
+        name: STAGE_EMPLOYEE_TRADERS_SOUTH
+        noLinkRefs: []
+  name: STAGE_EMPLOYEE_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

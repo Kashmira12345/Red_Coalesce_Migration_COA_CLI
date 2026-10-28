@@ -1,0 +1,144 @@
+fileVersion: 1
+id: a363b897-8e99-40de-be7a-86fccd9cc2dd
+name: STAGE_SHIPPER_TRADERS_SOUTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED stage_shipper_traders_south"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c27746d9-96d3-4001-8e15-d32e473a5965
+          stepCounter: a363b897-8e99-40de-be7a-86fccd9cc2dd
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: SHIPPERID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c05c45b4-da4a-4b01-8626-48c6efc19325
+                stepCounter: 2dd6a327-eaff-4d4e-b325-a61824da8637
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a075a9ce-d409-4809-a372-a98e8396bfe6
+          stepCounter: a363b897-8e99-40de-be7a-86fccd9cc2dd
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: ""
+        name: COMPANYNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32bbc736-0ba7-4395-a8b7-c38258b17e8c
+                stepCounter: 2dd6a327-eaff-4d4e-b325-a61824da8637
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: db19427b-c7cd-4f22-a639-8d933b4d8a74
+          stepCounter: a363b897-8e99-40de-be7a-86fccd9cc2dd
+        config: {}
+        dataType: VARCHAR(24)
+        defaultValue: ""
+        description: ""
+        name: PHONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c74da124-1e57-4364-8f4b-a9bbec5d52df
+                stepCounter: 2dd6a327-eaff-4d4e-b325-a61824da8637
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5ffd3c62-52c1-488d-8f54-3b9a1d8db7cf
+          stepCounter: a363b897-8e99-40de-be7a-86fccd9cc2dd
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "WhereScape dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1ac2258a-942a-4057-8b45-149d778dfc2d
+                stepCounter: 2dd6a327-eaff-4d4e-b325-a61824da8637
+            transform: "'TRADERS_SOUTH'"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: cfbaa62a-65b9-44f6-96b0-0bb7988bec9b
+          stepCounter: a363b897-8e99-40de-be7a-86fccd9cc2dd
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "WhereScape dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d5d0fa11-3ca9-4b6f-b8f9-4c11d005d3f5
+                stepCounter: 2dd6a327-eaff-4d4e-b325-a61824da8637
+            transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_SHIPPERS_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_SHIPPERS_TRADERS_SOUTH') }} "LOAD_SHIPPERS_TRADERS_SOUTH"
+        name: STAGE_SHIPPER_TRADERS_SOUTH
+        noLinkRefs: []
+  name: STAGE_SHIPPER_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

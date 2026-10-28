@@ -1,0 +1,291 @@
+fileVersion: 1
+id: 1d14d749-27f3-485f-b75a-c17f3d96f287
+name: STAGE_PRODUCT_TRADERS_SOUTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED stage_product_traders_south"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 667f0b95-2967-4b8b-b573-e26934f4967c
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: PRODUCTID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 20709ad8-bec3-4220-a328-61c46b0508ac
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 882a5f63-89e7-4b1e-9bef-ef14e8015047
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: ""
+        name: PRODUCTNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0c563ff6-d2dc-49f3-a2de-11ebb8e602f6
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7fad9f13-0225-429e-a3ba-942d868a2baf
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: SUPPLIERID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 66f79513-bf79-455a-831b-6b8a20aaac4c
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 814cf3db-cf7d-47a2-b2c0-e29adef9a670
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: CATEGORYID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9daae538-a4dc-498a-8545-1a7a96282689
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9d288ef9-bf3e-496a-a4a4-f90891e4207c
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: QUANTITYPERUNIT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 991181a3-7343-4411-8e4c-b818276e7635
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7a438e27-f04a-44ab-99ac-b98a943b0cce
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: NUMBER(38,4)
+        defaultValue: ""
+        description: ""
+        name: UNITPRICE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8630ca77-cdc3-47f9-8317-b282230fa1b8
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ed13262f-aafd-4b13-b786-14bc5fbb5ee6
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: UNITSINSTOCK
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ee029848-dde3-4d15-9927-9e14a84bc7dd
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c28501b2-d7aa-45f0-986c-e28cc995a151
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: UNITSONORDER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a6cd6e5b-f325-4d1d-9a2f-241196aaa846
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c2ccbc0e-85f0-4c8d-8df4-f85c8e2ac480
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: REORDERLEVEL
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8dc9a065-003a-4713-bcb9-79bd6d1edded
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 08822ef4-fde3-481b-b404-c204209c6661
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: BOOLEAN
+        defaultValue: ""
+        description: ""
+        name: DISCONTINUED
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57f585ea-8a0f-4098-b09d-9680859aa5b4
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 536d21e5-863d-4a89-8569-f6b9e1e14024
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "WhereScape dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7a0fcb6-2d22-45ff-a967-240d37d6fecd
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: "'TRADERS_SOUTH'"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8b97d040-14cf-4269-8f1a-8f307abe93a0
+          stepCounter: 1d14d749-27f3-485f-b75a-c17f3d96f287
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "WhereScape dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a5150076-8be5-405e-bb16-ddf56d98ad62
+                stepCounter: e0e73aaf-1133-49d3-964d-c77db985ca0e
+            transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_PRODUCTS_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_PRODUCTS_TRADERS_SOUTH') }} "LOAD_PRODUCTS_TRADERS_SOUTH"
+        name: STAGE_PRODUCT_TRADERS_SOUTH
+        noLinkRefs: []
+  name: STAGE_PRODUCT_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,169 @@
+fileVersion: 1
+id: 19219952-9dda-4703-83eb-c75bac4fcbaa
+name: STAGE_TERRITORY_REGIONS_TRADERS_NORTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED stage_territory_regions_traders_north"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d72b1773-4c98-4218-982b-725bcf3d32f7
+          stepCounter: 19219952-9dda-4703-83eb-c75bac4fcbaa
+        config: {}
+        dataType: VARCHAR(20)
+        defaultValue: ""
+        description: ""
+        name: TERRITORYID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a3c056b1-40f4-40aa-8c09-eb5d87083da8
+                stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 17a0d429-9835-4eec-a99d-2d001375723e
+          stepCounter: 19219952-9dda-4703-83eb-c75bac4fcbaa
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: TERRITORYDESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e4b3198b-6f5b-457e-b16b-a4f3290ae36c
+                stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c1d7ae8-96ff-45cf-8ead-7d958b081178
+          stepCounter: 19219952-9dda-4703-83eb-c75bac4fcbaa
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: REGIONID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 48ca13f1-c742-479c-93c0-cc0adae57b6f
+                stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 663782c0-6200-4f37-93cc-3af3a6c515ef
+          stepCounter: 19219952-9dda-4703-83eb-c75bac4fcbaa
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: REGIONDESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bfa46e99-f4fe-48a3-906f-122a97b35c85
+                stepCounter: d9072c08-59be-4c49-a33e-7bcb7bf75bd8
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 151632f6-97eb-49b7-93d8-bc258ac4de71
+          stepCounter: 19219952-9dda-4703-83eb-c75bac4fcbaa
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "WhereScape dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1efe478e-f306-4b82-843d-17f41f80d931
+                stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+            transform: "'TRADERS_NORTH'"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: aecd1aea-aa87-4c69-986d-5cac6eac5c24
+          stepCounter: 19219952-9dda-4703-83eb-c75bac4fcbaa
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "WhereScape dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bbc8cbb8-c03c-437a-aebb-fd4dd0217d99
+                stepCounter: 633bb2d8-4c87-4aed-baab-f156f5f42fd4
+            transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_TERRITORIES_TRADERS_NORTH
+          - locationName: SRC
+            nodeName: LOAD_REGION_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_TERRITORIES_TRADERS_NORTH') }} "LOAD_TERRITORIES_TRADERS_NORTH"
+            LEFT JOIN {{ ref('SRC', 'LOAD_REGION_TRADERS_NORTH') }} "LOAD_REGION_TRADERS_NORTH"
+              ON "LOAD_TERRITORIES_TRADERS_NORTH"."REGIONID" = "LOAD_REGION_TRADERS_NORTH"."REGIONID"
+        name: STAGE_TERRITORY_REGIONS_TRADERS_NORTH
+        noLinkRefs: []
+  name: STAGE_TERRITORY_REGIONS_TRADERS_NORTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,207 @@
+fileVersion: 1
+id: 2378887b-14aa-425c-a58d-dd09714eb4ce
+name: STAGE_ORDER_DETAILS_TRADERS_NORTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED stage_order_details_traders_north"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12655fbd-dc7f-4f5e-9587-1f9e03315e21
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: ORDERID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: de89c228-0a60-4492-9c25-62a45ca5af5c
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1d47638c-b9f1-4e08-b133-631cdf666c07
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: ORDERLINENUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 94c38ab3-4d08-478d-9f52-d8697f553882
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 951103e9-9ae9-469a-92ca-d13814d9000e
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: PRODUCTID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 64e5095d-9eb7-47a2-9e8f-1ed142adf594
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2c8f1392-7ef8-4aa6-b35a-173f77827f8a
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: NUMBER(19,4)
+        defaultValue: ""
+        description: ""
+        name: UNITPRICE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e07a0509-6be3-4daf-ae05-aceae67a1423
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f0573a9-d4a5-40c9-8ff8-096fcf23c448
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: QUANTITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5bf3bb36-30bb-42b4-8788-3764a69b2ddb
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5eb0c27c-4aab-4152-9053-1e43e839f572
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: FLOAT
+        defaultValue: ""
+        description: ""
+        name: DISCOUNT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 438487da-688b-4812-8ff9-baa7f457e350
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9e851257-8304-4d7b-888f-c457e5de4523
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "WhereScape dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fb9a7f24-bb09-4906-ba29-2cfdc661c6f1
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: "'TRADERS_NORTH'"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32f41e86-2a2a-48e2-9928-03b804754e35
+          stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "WhereScape dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c6d789d7-5c7b-4890-90ce-edf8054a0042
+                stepCounter: 93b1958a-5846-42b3-9122-59388e30b934
+            transform: "CURRENT_TIMESTAMP()::TIMESTAMP_NTZ"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_ORDER_DETAILS_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_ORDER_DETAILS_TRADERS_NORTH') }} "LOAD_ORDER_DETAILS_TRADERS_NORTH"
+        name: STAGE_ORDER_DETAILS_TRADERS_NORTH
+        noLinkRefs: []
+  name: STAGE_ORDER_DETAILS_TRADERS_NORTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
