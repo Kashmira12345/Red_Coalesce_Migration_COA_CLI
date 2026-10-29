@@ -1,0 +1,303 @@
+fileVersion: 1
+id: 9fe8096c-f5cd-402e-857d-19f1728ec071
+name: STAGE_ORDERS_SHIPPERS_EMPLOYEES_CUSTOMERS_TRADERS_NORTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED staging.stage_orders_shippers_employees_customers_traders_north"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 67325f5e-7d06-46e5-8b6b-b02a7bd21080
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Link hash key: MD5 of customer_name, employee_id, order_number, shipper_name"
+        name: HK_L_ORDERS_SHIPPERS_EMPLOYEES_CUSTOMERS
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06a6a031-d6af-4439-8169-0b56d3bac68d
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+              - columnCounter: 665e1366-14da-4ad2-b1f9-c3f94c523bff
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+              - columnCounter: c501b5ff-bf0f-4d6b-a41d-ad39db6eea1c
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+              - columnCounter: e7b39f0d-e8ac-4289-8486-343e53719679
+                stepCounter: a4b64bc0-cc9d-4187-9297-75af9e7ce52b
+            transform: "MD5(CONCAT_WS('||', UPPER(COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"COMPANYNAME\" AS VARCHAR)), '')), UPPER(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_NORTH\".\"EMPLOYEEID\" AS VARCHAR)), '')), UPPER(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_NORTH\".\"ORDERID\" AS VARCHAR)), '')), UPPER(COALESCE(TRIM(CAST(\"LOAD_SHIPPERS_TRADERS_NORTH\".\"COMPANYNAME\" AS VARCHAR)), ''))))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fc4a621a-8e4a-4919-bf6d-f799002e4077
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of customer_name"
+        name: HK_H_CUSTOMER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06a6a031-d6af-4439-8169-0b56d3bac68d
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_CUSTOMERS_TRADERS_NORTH\".\"COMPANYNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6ef9042f-1678-4628-ab3d-03439b6f2bbb
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of employee_id"
+        name: HK_H_EMPLOYEE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 665e1366-14da-4ad2-b1f9-c3f94c523bff
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_NORTH\".\"EMPLOYEEID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3b18f488-608f-4482-85d3-52bb180d326d
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of order_number"
+        name: HK_H_ORDER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c501b5ff-bf0f-4d6b-a41d-ad39db6eea1c
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_ORDERS_TRADERS_NORTH\".\"ORDERID\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5eff4020-8dfe-415f-8927-46e220d7a630
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of shipper_name"
+        name: HK_H_SHIPPER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7b39f0d-e8ac-4289-8486-343e53719679
+                stepCounter: a4b64bc0-cc9d-4187-9297-75af9e7ce52b
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_SHIPPERS_TRADERS_NORTH\".\"COMPANYNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 459af8a6-58a6-47b4-b88e-340a11d5b07d
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: "RED varchar(50) <- load_customers_traders_north.companyname"
+        name: CUSTOMER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 06a6a031-d6af-4439-8169-0b56d3bac68d
+                stepCounter: 22b04a2d-2317-478d-b4ec-bdd9346b4430
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 340eb7cf-4dfe-490a-974c-063ecb97ce1a
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "RED int <- load_orders_traders_north.employeeid"
+        name: EMPLOYEE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 665e1366-14da-4ad2-b1f9-c3f94c523bff
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f2ea6722-3ab7-4ecd-a5fe-0d5679746906
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "RED int <- load_orders_traders_north.orderid"
+        name: ORDER_NUMBER
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c501b5ff-bf0f-4d6b-a41d-ad39db6eea1c
+                stepCounter: 9c5da6b2-bc60-40a0-8153-6c65f3628e26
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3eed61f9-49f4-4a3f-8ee2-5db139ffcd9d
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: "RED nvarchar(40) <- load_shippers_traders_north.companyname"
+        name: SHIPPER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: e7b39f0d-e8ac-4289-8486-343e53719679
+                stepCounter: a4b64bc0-cc9d-4187-9297-75af9e7ce52b
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 57181b9b-e25b-4918-a964-355c0896f314
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "RED varchar(255) <- load_shippers_traders_north.dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7cdf8cee-7a24-4aa0-9d39-03885f158a69
+                stepCounter: a4b64bc0-cc9d-4187-9297-75af9e7ce52b
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: dde1fa28-614f-4d49-97ca-5cef3c89fb29
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "RED datetime <- load_shippers_traders_north.dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c28d50a3-028c-49fc-bc19-fd7dc38b3f74
+                stepCounter: a4b64bc0-cc9d-4187-9297-75af9e7ce52b
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c8a6e105-8382-4a48-9cae-f7dff01742fd
+          stepCounter: 9fe8096c-f5cd-402e-857d-19f1728ec071
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_CUSTOMERS_TRADERS_NORTH
+          - locationName: SRC
+            nodeName: LOAD_ORDERS_TRADERS_NORTH
+          - locationName: SRC
+            nodeName: LOAD_SHIPPERS_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_ORDERS_TRADERS_NORTH') }} "LOAD_ORDERS_TRADERS_NORTH"
+            INNER JOIN {{ ref('SRC', 'LOAD_SHIPPERS_TRADERS_NORTH') }} "LOAD_SHIPPERS_TRADERS_NORTH"
+            ON "LOAD_ORDERS_TRADERS_NORTH"."SHIPVIA" = "LOAD_SHIPPERS_TRADERS_NORTH"."SHIPPERID"
+            INNER JOIN {{ ref('SRC', 'LOAD_CUSTOMERS_TRADERS_NORTH') }} "LOAD_CUSTOMERS_TRADERS_NORTH"
+            ON "LOAD_ORDERS_TRADERS_NORTH"."CUSTOMERID" = "LOAD_CUSTOMERS_TRADERS_NORTH"."CUSTOMERID"
+        name: STAGE_ORDERS_SHIPPERS_EMPLOYEES_CUSTOMERS_TRADERS_NORTH
+        noLinkRefs: []
+  name: STAGE_ORDERS_SHIPPERS_EMPLOYEES_CUSTOMERS_TRADERS_NORTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

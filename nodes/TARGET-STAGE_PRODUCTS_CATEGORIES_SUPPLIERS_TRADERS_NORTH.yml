@@ -1,0 +1,259 @@
+fileVersion: 1
+id: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+name: STAGE_PRODUCTS_CATEGORIES_SUPPLIERS_TRADERS_NORTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED staging.stage_products_categories_suppliers_traders_north"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b276a162-7c97-4104-b6d3-7d93ad35b8df
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Link hash key: MD5 of category_name, product_name, supplier_name"
+        name: HK_L_PRODUCTS_CATEGORIES_SUPPLIERS
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 79742191-ea1c-4eed-a325-0477f9614dbc
+                stepCounter: f8805c72-c979-4946-a111-a0dc716001f1
+              - columnCounter: 58f9ca15-c06b-47e8-8b9e-b4e20e75f060
+                stepCounter: 131ede35-623b-473e-85c1-3b9659d5e6cc
+              - columnCounter: 856ad8bd-2c87-4672-b2cb-7645309c6a04
+                stepCounter: c72e21c4-b3cd-4568-ac5c-4cfc75bb92ae
+            transform: "MD5(CONCAT_WS('||', UPPER(COALESCE(TRIM(CAST(\"LOAD_CATEGORIES_TRADERS_NORTH\".\"CATEGORYNAME\" AS VARCHAR)), '')), UPPER(COALESCE(TRIM(CAST(\"LOAD_PRODUCTS_TRADERS_NORTH\".\"PRODUCTNAME\" AS VARCHAR)), '')), UPPER(COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_NORTH\".\"COMPANYNAME\" AS VARCHAR)), ''))))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2f3e9991-3e80-49a8-8c0b-f21fedb5237a
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of category_name"
+        name: HK_H_CATEGORY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 79742191-ea1c-4eed-a325-0477f9614dbc
+                stepCounter: f8805c72-c979-4946-a111-a0dc716001f1
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_CATEGORIES_TRADERS_NORTH\".\"CATEGORYNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 47e7ae1f-f7a2-4c4a-a056-bf6cc854b878
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of product_name"
+        name: HK_H_PRODUCT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 58f9ca15-c06b-47e8-8b9e-b4e20e75f060
+                stepCounter: 131ede35-623b-473e-85c1-3b9659d5e6cc
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_PRODUCTS_TRADERS_NORTH\".\"PRODUCTNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 12a0db7e-c732-4f6b-9f43-d02175893346
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of supplier_name"
+        name: HK_H_SUPPLIER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 856ad8bd-2c87-4672-b2cb-7645309c6a04
+                stepCounter: c72e21c4-b3cd-4568-ac5c-4cfc75bb92ae
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_SUPPLIERS_TRADERS_NORTH\".\"COMPANYNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b4ac9e74-2dea-4991-a8a6-9675b5d4d1d9
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: "RED nvarchar(15) <- load_categories_traders_north.categoryname"
+        name: CATEGORY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 79742191-ea1c-4eed-a325-0477f9614dbc
+                stepCounter: f8805c72-c979-4946-a111-a0dc716001f1
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 30189aa4-38cd-49dc-a690-1b938f6a35ea
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: "RED nvarchar(40) <- load_products_traders_north.productname"
+        name: PRODUCT_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 58f9ca15-c06b-47e8-8b9e-b4e20e75f060
+                stepCounter: 131ede35-623b-473e-85c1-3b9659d5e6cc
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9030dd74-d9e0-43e1-89b1-e13643c1d9f7
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: "RED nvarchar(40) <- load_suppliers_traders_north.companyname"
+        name: SUPPLIER_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 856ad8bd-2c87-4672-b2cb-7645309c6a04
+                stepCounter: c72e21c4-b3cd-4568-ac5c-4cfc75bb92ae
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45fb987f-2ad7-4b0a-9bfc-d35654337472
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "RED varchar(255) <- load_suppliers_traders_north.dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50bd938e-63ba-4e51-8a69-1c8c1e98a37c
+                stepCounter: c72e21c4-b3cd-4568-ac5c-4cfc75bb92ae
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c4dc742e-320c-4d96-9398-4eeeec5b18ad
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "RED datetime <- load_suppliers_traders_north.dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 8eba4973-56eb-4cc4-972c-036ba5600ea1
+                stepCounter: c72e21c4-b3cd-4568-ac5c-4cfc75bb92ae
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: fb65e1a9-3198-4bc4-99ca-7cb626602782
+          stepCounter: c8c98ea0-bbea-4c14-aae5-c8907f4ca7fe
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_CATEGORIES_TRADERS_NORTH
+          - locationName: SRC
+            nodeName: LOAD_PRODUCTS_TRADERS_NORTH
+          - locationName: SRC
+            nodeName: LOAD_SUPPLIERS_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_PRODUCTS_TRADERS_NORTH') }} "LOAD_PRODUCTS_TRADERS_NORTH"
+            INNER JOIN {{ ref('SRC', 'LOAD_SUPPLIERS_TRADERS_NORTH') }} "LOAD_SUPPLIERS_TRADERS_NORTH"
+            ON "LOAD_PRODUCTS_TRADERS_NORTH"."SUPPLIERID" = "LOAD_SUPPLIERS_TRADERS_NORTH"."SUPPLIERID"
+            INNER JOIN {{ ref('SRC', 'LOAD_CATEGORIES_TRADERS_NORTH') }} "LOAD_CATEGORIES_TRADERS_NORTH"
+            ON "LOAD_PRODUCTS_TRADERS_NORTH"."CATEGORYID" = "LOAD_CATEGORIES_TRADERS_NORTH"."CATEGORYID"
+        name: STAGE_PRODUCTS_CATEGORIES_SUPPLIERS_TRADERS_NORTH
+        noLinkRefs: []
+  name: STAGE_PRODUCTS_CATEGORIES_SUPPLIERS_TRADERS_NORTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

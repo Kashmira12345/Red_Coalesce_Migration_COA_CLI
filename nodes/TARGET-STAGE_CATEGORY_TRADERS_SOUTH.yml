@@ -1,0 +1,207 @@
+fileVersion: 1
+id: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+name: STAGE_CATEGORY_TRADERS_SOUTH
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: "Migrated from WhereScape RED staging.stage_category_traders_south"
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 843dbdaa-168b-4f27-a4bf-9705b94b041b
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key: MD5 of category_name"
+        name: HK_H_CATEGORY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: efc77a48-eaed-4621-99fa-f986e837fb14
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+            transform: "MD5(UPPER(COALESCE(TRIM(CAST(\"LOAD_CATEGORIES_TRADERS_SOUTH\".\"CATEGORYNAME\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d696ba05-96ee-4895-a817-031e09046092
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: "RED nvarchar(15) <- load_categories_traders_south.categoryname"
+        name: CATEGORY_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: efc77a48-eaed-4621-99fa-f986e837fb14
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d46331d2-a590-4895-8c2d-08a2c0de3958
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "RED int <- load_categories_traders_south.categoryid"
+        name: CATEGORYID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7173474-6d06-4d94-b48d-bdeebb727bb4
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7c995619-6bb8-4bc3-aa64-353cefdda796
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: VARCHAR(4000)
+        defaultValue: ""
+        description: "RED nvarchar(4000) <- load_categories_traders_south.description"
+        name: DESCRIPTION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 901e4e25-f0dc-4fff-a03c-c5c7a07f5236
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ec5e4011-d67e-4374-b97e-010ec78496f4
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Change hash: MD5 of categoryid, description"
+        name: DSS_CHANGE_HASH_CATEGORY_LROC_TRADERS_SOUTH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d7173474-6d06-4d94-b48d-bdeebb727bb4
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+              - columnCounter: 901e4e25-f0dc-4fff-a03c-c5c7a07f5236
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+            transform: "MD5(CONCAT_WS('||', COALESCE(TRIM(CAST(\"LOAD_CATEGORIES_TRADERS_SOUTH\".\"CATEGORYID\" AS VARCHAR)), ''), COALESCE(TRIM(CAST(\"LOAD_CATEGORIES_TRADERS_SOUTH\".\"DESCRIPTION\" AS VARCHAR)), '')))"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2530cfcb-8616-4ded-8f92-ca498ca0793d
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: "RED varchar(255) <- load_categories_traders_south.dss_record_source"
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 97527660-0e96-419c-a4ff-d77916836c0b
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 157c316d-2976-4ead-b803-a7917cfdf5d9
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "RED datetime <- load_categories_traders_south.dss_load_date"
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 91407baf-f0fd-47d5-a9fe-4d2e578a7213
+                stepCounter: c339b486-c4f3-4030-b61b-6968d26fdb6d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b69022b4-3444-4ab8-9854-ce352b487253
+          stepCounter: 0be8970d-bab2-4322-9f2f-c4d9487f4a97
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Stage load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: LOAD_CATEGORIES_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('SRC', 'LOAD_CATEGORIES_TRADERS_SOUTH') }} "LOAD_CATEGORIES_TRADERS_SOUTH"
+        name: STAGE_CATEGORY_TRADERS_SOUTH
+        noLinkRefs: []
+  name: STAGE_CATEGORY_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node
