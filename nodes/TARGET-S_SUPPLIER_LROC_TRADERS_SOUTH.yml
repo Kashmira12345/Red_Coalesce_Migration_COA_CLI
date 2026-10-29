@@ -1,0 +1,308 @@
+fileVersion: 1
+id: fe534bed-2e97-4bd7-a451-0e37b36bb474
+name: S_SUPPLIER_LROC_TRADERS_SOUTH
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Satellite migrated from WhereScape RED rawvault.s_supplier_lroc_traders_south. Insert-only: never truncate or re-create after loading."
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ac716aae-50a4-4d43-afd6-71542d34dd29
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config:
+          is_hk: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Parent hash key of H_SUPPLIER"
+        name: HK_H_SUPPLIER
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 506d5a8f-f561-4b97-8cb9-e25e3d82d4cc
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2cff01a3-9f0c-4e37-8b21-838544c913d5
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0d9c32ca-331b-4c16-a7cb-820f384e28a8
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c99c6a21-597a-401b-a68c-abb1cc543376
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: SUPPLIERID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0e0fa092-a66c-44bc-87e8-a93382391605
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 05e31243-aa71-4b61-a37c-43b4af7efe0a
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: VARCHAR(60)
+        defaultValue: ""
+        description: ""
+        name: ADDRESS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7a1075c5-b4cf-41bc-b315-feebdbeff3e7
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 121877ad-b582-4e16-a927-79082b60c965
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: ""
+        name: CITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 44630d87-c1db-4b8d-8b83-9d418bc49800
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a96d3c31-9ac7-41d9-ae23-b49e01866ead
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: ""
+        name: REGION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ed6716f5-34ac-4caf-bd4d-af6a7813fffa
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 34369dec-12d9-42a2-b467-3eef23447260
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: VARCHAR(10)
+        defaultValue: ""
+        description: ""
+        name: POSTALCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: dc9b1844-e3e4-4df4-a22e-dcbf17e631d8
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: de284bea-8ff3-4dff-99eb-5dd95c8e690a
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config:
+          is_hd: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hash diff (stage DSS_CHANGE_HASH_SUPPLIER_LROC_TRADERS_SOUTH)"
+        name: DSS_CHANGE_HASH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fc4ef541-8719-4f8b-b44b-641a1ac934ad
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9c62d7c1-2380-4454-8206-2ef51e52a52e
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3c35dfe-6b93-4e9f-9f13-7496c0231c72
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e2d6c1fe-95f3-46f8-a9ea-b82b8c19ba55
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 81abf01b-3b22-4f0a-aa42-677cb9e9c91a
+                stepCounter: 29755aa6-fa73-4e82-b3cd-20e6c1c13131
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 23b4b8d7-29cb-4add-83d5-a6956dc22440
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Version start: load run time (RED dss_start_date)"
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f03d6567-227a-4f29-9fec-96d7ac3fec84
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "Version number per hash key, starting at 1 (RED dss_version)"
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "COALESCE((SELECT MAX(\"SAT\".\"DSS_VERSION\") FROM {{ ref_no_link('TARGET', 'S_SUPPLIER_LROC_TRADERS_SOUTH') }} \"SAT\" WHERE \"SAT\".\"HK_H_SUPPLIER\" = \"STAGE_SUPPLIER_TRADERS_SOUTH\".\"HK_H_SUPPLIER\"), 0) + 1"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 9eb5b59c-b38d-441b-bb59-1e9ec5c0810c
+          stepCounter: fe534bed-2e97-4bd7-a451-0e37b36bb474
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Satellite load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_SUPPLIER_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_SUPPLIER_TRADERS_SOUTH') }} "STAGE_SUPPLIER_TRADERS_SOUTH"
+        name: STAGE_SUPPLIER_TRADERS_SOUTH
+        noLinkRefs: []
+  name: S_SUPPLIER_LROC_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: "DV:::8"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,434 @@
+fileVersion: 1
+id: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+name: S_EMPLOYEE_GDPR_TRADERS_SOUTH
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Satellite migrated from WhereScape RED rawvault.s_employee_gdpr_traders_south. Insert-only: never truncate or re-create after loading."
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a1ba55e2-046e-4ff2-8665-eb5446ce6356
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config:
+          is_hk: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Parent hash key of H_EMPLOYEE"
+        name: HK_H_EMPLOYEE
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: daa2d507-a78d-4f9f-84f5-bf44373f3c44
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 79690ee7-94db-415a-a52a-946821a9384a
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: COUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 481de107-c4e8-42f7-a8dc-18c304535caf
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 18bba109-773b-4ccf-962d-4547309f1edb
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: LASTNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b143834f-4288-4229-b372-f579013eff32
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ee0e887e-0564-4c1b-b17b-5d5e31ef0db0
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: FIRSTNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: aadccd6a-d3d6-4718-b70d-f95ff0dd8f00
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b85574aa-e6dc-4cbf-9ed7-90af3bc80620
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: TITLE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d3fa5a47-a4c6-4d3e-a7a7-8cddde72c25d
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c1286977-e187-439e-8dbd-674e0bd67619
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: TITLEOFCOURTESY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: af5ccbf8-1d47-4ef9-b0dd-c2b4feb64dcb
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c89e0834-3bc6-4a2b-9274-01f449325b44
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: BIRTHDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 18ea4e4c-36cd-4721-8a72-ac0c223d66b0
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5c9eb850-a6d8-4264-bc3a-063750a91ae6
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(60)
+        defaultValue: ""
+        description: ""
+        name: ADDRESS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c32b288c-7a9e-4e4c-a152-8b61e07f7758
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e92245dd-e24d-4078-82af-467f0ed91330
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: CITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 74210bae-9e35-4094-b114-193953b6172a
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 72ad0de1-e553-4d5e-9395-5f57f3691a9e
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: REGION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7149acc8-7ac1-453e-b1bd-8bf41628bdb1
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 765e2284-2a7e-40dd-a854-45321286ecd7
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: POSTALCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6c3f6f41-7d48-41c1-b801-4e4892121052
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ce42e5bf-4f6e-4f6c-aac3-26592e708022
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: HOMEPHONE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6de75940-c552-43bf-9bd3-c9691dd5ce5d
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 266fc74e-fb59-428b-b073-b79d07194125
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: REPORTSTO
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 3a03b87b-7e6f-45bf-a5e8-62dd3ba7127f
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 82885050-1a86-4456-856f-6742eb5d5ae7
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config:
+          is_hd: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hash diff (stage DSS_CHANGE_HASH_EMPLOYEE_GDPR_TRADERS_SOUTH)"
+        name: DSS_CHANGE_HASH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb88021a-074a-4e55-9d56-80175ba09038
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 91ef1a60-f270-44d3-8aae-7ec37a27d7c4
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f37dbe9d-1eb2-4976-a748-aa58783484ab
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ddc6c237-b0c3-4b48-bf4a-f6efc95aa845
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6562e778-c4a3-4085-96e8-256dc66450a8
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: af446a7d-6180-42d7-8ae5-73b6baa10eec
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Version start: load run time (RED dss_start_date)"
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: ea01558e-4049-49a4-99ba-d0dea73de421
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "Version number per hash key, starting at 1 (RED dss_version)"
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "COALESCE((SELECT MAX(\"SAT\".\"DSS_VERSION\") FROM {{ ref_no_link('TARGET', 'S_EMPLOYEE_GDPR_TRADERS_SOUTH') }} \"SAT\" WHERE \"SAT\".\"HK_H_EMPLOYEE\" = \"STAGE_EMPLOYEE_TRADERS_SOUTH\".\"HK_H_EMPLOYEE\"), 0) + 1"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c6b62f93-be0e-43ee-8b02-cc606a94a994
+          stepCounter: 21373e8a-6f03-4506-8b1c-11e87c555a4c
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Satellite load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_EMPLOYEE_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_EMPLOYEE_TRADERS_SOUTH') }} "STAGE_EMPLOYEE_TRADERS_SOUTH"
+        name: STAGE_EMPLOYEE_TRADERS_SOUTH
+        noLinkRefs: []
+  name: S_EMPLOYEE_GDPR_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: "DV:::8"
+  type: sql
+  version: 1
+type: Node

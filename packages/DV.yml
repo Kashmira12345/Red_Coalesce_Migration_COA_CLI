@@ -4,6 +4,12 @@ config:
       "6":
         defaultStorageLocation: null
         isDisabled: false
+      "7":
+        defaultStorageLocation: null
+        isDisabled: false
+      "8":
+        defaultStorageLocation: null
+        isDisabled: false
   packageVariables: |-
     {#------------------------------------------------------------------------------------------------------#}
     {#-- Global variables of datavault4coalesce                                                           --#}
