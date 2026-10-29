@@ -1,0 +1,172 @@
+fileVersion: 1
+id: b7d18c04-3319-4169-849d-13ccb024d053
+name: H_EMPLOYEE
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Hub migrated from WhereScape RED rawvault.h_employee. Insert-only: never truncate or re-create after loading."
+  isMultisource: true
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: c17b1417-5162-4e61-85a7-0d65e6c6e9c5
+          stepCounter: b7d18c04-3319-4169-849d-13ccb024d053
+        config:
+          is_Hub_hk: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key"
+        name: HK_H_EMPLOYEE
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a713027f-088f-4ab7-aa51-f350a265f31a
+                stepCounter: 27d3d378-4ed4-415d-b5cf-15cbfcba5d9d
+            transform: ""
+          - columnReferences:
+              - columnCounter: daa2d507-a78d-4f9f-84f5-bf44373f3c44
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 74a23c28-2ce3-4886-98eb-e8bbb45e850a
+          stepCounter: b7d18c04-3319-4169-849d-13ccb024d053
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "Business key"
+        name: EMPLOYEE_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5085c594-a061-4e4d-9a64-8d2d343f5fa0
+                stepCounter: 27d3d378-4ed4-415d-b5cf-15cbfcba5d9d
+            transform: ""
+          - columnReferences:
+              - columnCounter: 94b1b732-0f50-4fec-965e-66642b5378b0
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: true
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: f730a69f-6429-4aab-83df-fbf7abb0530d
+          stepCounter: b7d18c04-3319-4169-849d-13ccb024d053
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 329082de-d588-4daa-b878-5dcb89394ef3
+                stepCounter: 27d3d378-4ed4-415d-b5cf-15cbfcba5d9d
+            transform: ""
+          - columnReferences:
+              - columnCounter: f37dbe9d-1eb2-4976-a748-aa58783484ab
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d916d341-e366-48b5-8466-b3fc096ce87c
+          stepCounter: b7d18c04-3319-4169-849d-13ccb024d053
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4bfa38e2-95b0-48cc-a5b7-b2c6d6f3a1d8
+                stepCounter: 27d3d378-4ed4-415d-b5cf-15cbfcba5d9d
+            transform: ""
+          - columnReferences:
+              - columnCounter: 6562e778-c4a3-4085-96e8-256dc66450a8
+                stepCounter: 2c565c36-18d0-46a1-9cfe-0d3bbd472c9d
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 32d72f78-88c1-429f-afc5-ba9f13e530b4
+          stepCounter: b7d18c04-3319-4169-849d-13ccb024d053
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Hub load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_EMPLOYEE_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_EMPLOYEE_TRADERS_NORTH') }} "STAGE_EMPLOYEE_TRADERS_NORTH"
+        name: STAGE_EMPLOYEE_TRADERS_NORTH
+        noLinkRefs: []
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_EMPLOYEE_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_EMPLOYEE_TRADERS_SOUTH') }} "STAGE_EMPLOYEE_TRADERS_SOUTH"
+        name: STAGE_EMPLOYEE_TRADERS_SOUTH
+        noLinkRefs: []
+  name: H_EMPLOYEE
+  overrideSQL: false
+  schema: ""
+  sqlType: "DV:::6"
+  type: sql
+  version: 1
+type: Node
