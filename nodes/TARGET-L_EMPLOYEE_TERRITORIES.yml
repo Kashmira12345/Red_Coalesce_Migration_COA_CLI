@@ -1,0 +1,197 @@
+fileVersion: 1
+id: 9e945a5d-0298-43b5-9037-c7610490db98
+name: L_EMPLOYEE_TERRITORIES
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Link migrated from WhereScape RED rawvault.l_employee_territories. Insert-only: never truncate or re-create after loading."
+  isMultisource: true
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 24ce515f-fc62-4ec6-92cd-cfead78ce0be
+          stepCounter: 9e945a5d-0298-43b5-9037-c7610490db98
+        config:
+          is_Link_hk: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Link hash key"
+        name: HK_L_EMPLOYEE_TERRITORIES
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bc4ecd17-be53-4875-b927-7558ef472d6c
+                stepCounter: 402066b2-414a-48b0-a75a-9d828e02e468
+            transform: ""
+          - columnReferences:
+              - columnCounter: 7eb69fc2-d29d-4c61-809b-99d76e657fed
+                stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d6f2164c-8cef-4896-afd6-6e617695b100
+          stepCounter: 9e945a5d-0298-43b5-9037-c7610490db98
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key of H_EMPLOYEE"
+        name: HK_H_EMPLOYEE
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 5e76c251-ef4f-4f2e-a340-73cd3490950e
+                stepCounter: 402066b2-414a-48b0-a75a-9d828e02e468
+            transform: ""
+          - columnReferences:
+              - columnCounter: 182bb5e8-2d93-44a8-9624-cc47715f5a20
+                stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3543065a-809d-47eb-8f09-70f0138230a2
+          stepCounter: 9e945a5d-0298-43b5-9037-c7610490db98
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key of H_TERRITORY"
+        name: HK_H_TERRITORY
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ef29574d-544f-4b7f-8d4b-93ac0c4bece7
+                stepCounter: 402066b2-414a-48b0-a75a-9d828e02e468
+            transform: ""
+          - columnReferences:
+              - columnCounter: c1b96329-686f-443d-a0f5-bed1c9c3f241
+                stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6766deda-ba69-41bf-afbf-89651e37ad56
+          stepCounter: 9e945a5d-0298-43b5-9037-c7610490db98
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: fe305e0e-bc40-4706-adf0-57d62bdd7dbf
+                stepCounter: 402066b2-414a-48b0-a75a-9d828e02e468
+            transform: ""
+          - columnReferences:
+              - columnCounter: b1f6e7da-e91e-4525-a5c9-91015c91cae6
+                stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 02daaba8-3a77-4a61-8b92-a22312cd4413
+          stepCounter: 9e945a5d-0298-43b5-9037-c7610490db98
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 681c0edd-da0b-405e-a2a9-acb971ac56c6
+                stepCounter: 402066b2-414a-48b0-a75a-9d828e02e468
+            transform: ""
+          - columnReferences:
+              - columnCounter: 4348cfcf-bbfd-4da7-8596-e9a704ae6d59
+                stepCounter: d01bca30-932f-47f5-b0ed-08d7d1eb7308
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90d29437-96b1-4bbd-bfe4-500d986074e5
+          stepCounter: 9e945a5d-0298-43b5-9037-c7610490db98
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Link load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_EMPLOYEE_TERRITORIES_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_EMPLOYEE_TERRITORIES_TRADERS_NORTH') }} "STAGE_EMPLOYEE_TERRITORIES_TRADERS_NORTH"
+        name: STAGE_EMPLOYEE_TERRITORIES_TRADERS_NORTH
+        noLinkRefs: []
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_EMPLOYEE_TERRITORIES_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_EMPLOYEE_TERRITORIES_TRADERS_SOUTH') }} "STAGE_EMPLOYEE_TERRITORIES_TRADERS_SOUTH"
+        name: STAGE_EMPLOYEE_TERRITORIES_TRADERS_SOUTH
+        noLinkRefs: []
+  name: L_EMPLOYEE_TERRITORIES
+  overrideSQL: false
+  schema: ""
+  sqlType: "DV:::7"
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,203 @@
+fileVersion: 1
+id: c08aa032-0f8a-415a-a204-da0450d1ef44
+name: S_ORDER_HROC_TRADERS_SOUTH
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Satellite migrated from WhereScape RED rawvault.s_order_hroc_traders_south. Insert-only: never truncate or re-create after loading."
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 20629882-4d35-4b7e-9173-cf02c830a87b
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config:
+          is_hk: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Parent hash key of H_ORDER"
+        name: HK_H_ORDER
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 37739430-7fae-4c84-b23d-c9a6c5946c9a
+                stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 220f5e64-4292-4d20-bc46-fce100f89fa9
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config: {}
+        dataType: NUMBER(38,4)
+        defaultValue: ""
+        description: ""
+        name: FREIGHT
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 50151463-05b7-4ad6-bcfa-9f246a336610
+                stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 289c9c8e-bae0-4842-a808-afc38acb34ed
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config:
+          is_hd: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hash diff (stage DSS_CHANGE_HASH_ORDER_HROC_TRADERS_SOUTH)"
+        name: DSS_CHANGE_HASH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1ef196fd-619f-4aa7-81c4-f33325026c2e
+                stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 16b465f3-38e3-43e6-8cd3-376447b76509
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 425400a2-baf8-431a-963d-c2a48338a028
+                stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: caa3eb2c-6162-4c7f-8d46-5031aa7a24e2
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 19f3abfc-b8c4-494c-abed-13edb4287f3c
+                stepCounter: 2cd25190-255c-4624-9ee4-ae487ca594f6
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 90280597-a877-453d-9cbe-ac0764f0d75a
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Version start: load run time (RED dss_start_date)"
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 45f62876-5371-4f28-842a-177da994c428
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "Version number per hash key, starting at 1 (RED dss_version)"
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "COALESCE((SELECT MAX(\"SAT\".\"DSS_VERSION\") FROM {{ ref_no_link('TARGET', 'S_ORDER_HROC_TRADERS_SOUTH') }} \"SAT\" WHERE \"SAT\".\"HK_H_ORDER\" = \"STAGE_ORDER_TRADERS_SOUTH\".\"HK_H_ORDER\"), 0) + 1"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 88f7298c-5aad-4055-a6ad-caf362933835
+          stepCounter: c08aa032-0f8a-415a-a204-da0450d1ef44
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Satellite load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_ORDER_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_ORDER_TRADERS_SOUTH') }} "STAGE_ORDER_TRADERS_SOUTH"
+        name: STAGE_ORDER_TRADERS_SOUTH
+        noLinkRefs: []
+  name: S_ORDER_HROC_TRADERS_SOUTH
+  overrideSQL: false
+  schema: ""
+  sqlType: "DV:::8"
+  type: sql
+  version: 1
+type: Node

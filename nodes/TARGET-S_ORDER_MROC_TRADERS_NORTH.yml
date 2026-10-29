@@ -1,0 +1,350 @@
+fileVersion: 1
+id: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+name: S_ORDER_MROC_TRADERS_NORTH
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Satellite migrated from WhereScape RED rawvault.s_order_mroc_traders_north. Insert-only: never truncate or re-create after loading."
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8641e17e-a0e7-4003-b668-0d976615c68d
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config:
+          is_hk: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Parent hash key of H_ORDER"
+        name: HK_H_ORDER
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0dce5c5f-2ac2-49ba-a621-f996e6418458
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b22eafb-b193-4fbb-8f0a-2fb61da8820c
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: REQUIREDDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f753896c-5670-4a24-b821-2ea944d34e32
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6f6fb921-2b69-4689-8cd4-ccb7636c1a18
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: SHIPPEDDATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: d773170e-09b1-404a-8fa4-991bbf4c95ba
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 24f20d73-4b85-4ecf-9fb5-8a1e43708d71
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: VARCHAR(40)
+        defaultValue: ""
+        description: ""
+        name: SHIPNAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7f4401eb-3dd1-45ce-aab6-3e2223d3ea8d
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 061bcaa6-cf58-4e18-a6d7-838fe639ecc8
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: VARCHAR(60)
+        defaultValue: ""
+        description: ""
+        name: SHIPADDRESS
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 1d63b6d5-3d81-4f3d-b489-cfae9ab472a4
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 778b671f-8394-43a3-9413-f9d7de7f1bae
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: ""
+        name: SHIPCITY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cc0d89ab-87d0-4e55-b7b7-0ade5bb3e97d
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6c1e0efb-9bfa-4b8d-8d9a-ca6d78ef163e
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: ""
+        name: SHIPREGION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: ce0cc1ee-545f-4d5c-8273-3d0407e3237b
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d89c557e-0008-4e56-8af8-fecb280c6719
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: VARCHAR(10)
+        defaultValue: ""
+        description: ""
+        name: SHIPPOSTALCODE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 813d4893-f0ca-45b1-a6f9-5ff2c558c0c4
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 183a4207-7518-4617-98ad-34c8d35c7316
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: VARCHAR(15)
+        defaultValue: ""
+        description: ""
+        name: SHIPCOUNTRY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 0dfae77d-7c57-41d2-a36f-3f143088e356
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: acc393a3-45c2-471d-99e6-7704d20e19d3
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config:
+          is_hd: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hash diff (stage DSS_CHANGE_HASH_ORDER_MROC_TRADERS_NORTH)"
+        name: DSS_CHANGE_HASH
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 57a28ad6-b393-4678-b4df-9ab5a933056e
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 85153d16-c162-417a-86d0-4653760f109d
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: c7959337-6947-4fd4-9a0b-dfcd2f742bb9
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 14d86db8-7463-40a7-b7dd-a5b7a4dcbd14
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: b38971e0-ebd5-4003-ba51-4508f1a6ad2e
+                stepCounter: 1852df3b-3835-4590-89ee-8b7a0747b4ad
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 144a2e6c-c5d7-4422-8efd-5bd831d38ff6
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Version start: load run time (RED dss_start_date)"
+        name: DSS_START_DATE
+        nullable: true
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7909845a-12dd-4700-bc12-3a566eaed96b
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: "Version number per hash key, starting at 1 (RED dss_version)"
+        name: DSS_VERSION
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "COALESCE((SELECT MAX(\"SAT\".\"DSS_VERSION\") FROM {{ ref_no_link('TARGET', 'S_ORDER_MROC_TRADERS_NORTH') }} \"SAT\" WHERE \"SAT\".\"HK_H_ORDER\" = \"STAGE_ORDER_TRADERS_NORTH\".\"HK_H_ORDER\"), 0) + 1"
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: a8fee42d-e5c8-4996-85a1-f114096d0171
+          stepCounter: fa0fcbb3-c61b-431e-829d-f55773bef8ef
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Satellite load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_ORDER_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_ORDER_TRADERS_NORTH') }} "STAGE_ORDER_TRADERS_NORTH"
+        name: STAGE_ORDER_TRADERS_NORTH
+        noLinkRefs: []
+  name: S_ORDER_MROC_TRADERS_NORTH
+  overrideSQL: false
+  schema: ""
+  sqlType: "DV:::8"
+  type: sql
+  version: 1
+type: Node

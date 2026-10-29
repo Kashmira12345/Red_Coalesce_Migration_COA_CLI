@@ -1,0 +1,197 @@
+fileVersion: 1
+id: 83561340-6929-40c4-8d62-35be3e588c56
+name: L_ORDER_DETAILS
+operation:
+  config:
+    disable_hwm: true
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: "Link migrated from WhereScape RED rawvault.l_order_details. Insert-only: never truncate or re-create after loading."
+  isMultisource: true
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: beec983c-05cd-4771-824e-ef1483c14fb5
+          stepCounter: 83561340-6929-40c4-8d62-35be3e588c56
+        config:
+          is_Link_hk: true
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Link hash key"
+        name: HK_L_ORDER_DETAILS
+        nullable: false
+        primaryKey: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f0a52771-11b0-45d6-b9e0-6cf532bed283
+                stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+            transform: ""
+          - columnReferences:
+              - columnCounter: 90c35b0a-6962-4155-bcd6-70822955c42c
+                stepCounter: 24098b2c-ac57-4e17-acce-cffe90710b64
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 159753a7-80ca-4047-b04a-56a0e9342dcb
+          stepCounter: 83561340-6929-40c4-8d62-35be3e588c56
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key of H_ORDER"
+        name: HK_H_ORDER
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 86304574-3a23-428e-9a18-3910c57e8d5b
+                stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+            transform: ""
+          - columnReferences:
+              - columnCounter: 2f824b83-08da-4fe6-9bf2-ec4e40561af7
+                stepCounter: 24098b2c-ac57-4e17-acce-cffe90710b64
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7b5300d5-b581-4736-8c5a-f23025521319
+          stepCounter: 83561340-6929-40c4-8d62-35be3e588c56
+        config: {}
+        dataType: VARCHAR(32)
+        defaultValue: ""
+        description: "Hub hash key of H_PRODUCT"
+        name: HK_H_PRODUCT
+        nullable: false
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 13fab1e1-2d63-4423-8cf1-809f3ae3f479
+                stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+            transform: ""
+          - columnReferences:
+              - columnCounter: 8850908d-d89b-49c9-bdc8-becd1efbf534
+                stepCounter: 24098b2c-ac57-4e17-acce-cffe90710b64
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b11942ef-617e-470e-932c-507f98724157
+          stepCounter: 83561340-6929-40c4-8d62-35be3e588c56
+        config: {}
+        dataType: VARCHAR(255)
+        defaultValue: ""
+        description: ""
+        name: DSS_RECORD_SOURCE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 9e851257-8304-4d7b-888f-c457e5de4523
+                stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+            transform: ""
+          - columnReferences:
+              - columnCounter: cb9c0717-6d72-4465-87b0-0015b96ba793
+                stepCounter: 24098b2c-ac57-4e17-acce-cffe90710b64
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: d29d6e36-2b44-4a55-8342-891d2daec0d7
+          stepCounter: 83561340-6929-40c4-8d62-35be3e588c56
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: ""
+        name: DSS_LOAD_DATE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 32f41e86-2a2a-48e2-9928-03b804754e35
+                stepCounter: 2378887b-14aa-425c-a58d-dd09714eb4ce
+            transform: ""
+          - columnReferences:
+              - columnCounter: 78934396-acfd-4c91-ac09-0236b7197dd3
+                stepCounter: 24098b2c-ac57-4e17-acce-cffe90710b64
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 26a9b937-fd50-4f18-9858-45de23639a09
+          stepCounter: 83561340-6929-40c4-8d62-35be3e588c56
+        config: {}
+        dataType: TIMESTAMP_NTZ(9)
+        defaultValue: ""
+        description: "Link load run time (RED dss_create_time)"
+        name: DSS_CREATE_TIME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+          - columnReferences: []
+            transform: "CAST(CURRENT_TIMESTAMP AS TIMESTAMP)"
+        transform: ""
+        uniqueKey: false
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_ORDER_DETAILS_TRADERS_NORTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_ORDER_DETAILS_TRADERS_NORTH') }} "STAGE_ORDER_DETAILS_TRADERS_NORTH"
+        name: STAGE_ORDER_DETAILS_TRADERS_NORTH
+        noLinkRefs: []
+      - aliases: {}
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STAGE_ORDER_DETAILS_TRADERS_SOUTH
+        join:
+          joinCondition: |-
+            FROM {{ ref('TARGET', 'STAGE_ORDER_DETAILS_TRADERS_SOUTH') }} "STAGE_ORDER_DETAILS_TRADERS_SOUTH"
+        name: STAGE_ORDER_DETAILS_TRADERS_SOUTH
+        noLinkRefs: []
+  name: L_ORDER_DETAILS
+  overrideSQL: false
+  schema: ""
+  sqlType: "DV:::7"
+  type: sql
+  version: 1
+type: Node
