@@ -1,0 +1,12 @@
+fileVersion: 1
+id: cce62724-eada-4973-bd00-5dc004ac42a7
+name: CUSTOMER_DATA_VAULT
+steps:
+  - 01e19369-32db-470d-8ca1-69e29648d235
+  - 950fa7c0-7058-4f2a-a415-7ce408a2910a
+  - 6f32931d-0ff0-492e-a525-2463c1d7573d
+  - 0da07da4-22fa-4242-ac5d-f25ac8620ee8
+  - a04d174e-60ce-4f39-959b-c9478fcb360e
+  - e0b53ff8-72fd-4a21-8d3f-3823e0571714
+  - 9b205f15-1571-409a-80c6-12b6591ec945
+type: Subgraph

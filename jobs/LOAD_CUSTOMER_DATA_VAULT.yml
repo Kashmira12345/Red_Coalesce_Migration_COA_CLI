@@ -1,0 +1,6 @@
+excludeSelector: ""
+fileVersion: 1
+id: "1"
+includeSelector: '{ subgraph: "CUSTOMER_DATA_VAULT" }'
+name: LOAD_CUSTOMER_DATA_VAULT
+type: Job
