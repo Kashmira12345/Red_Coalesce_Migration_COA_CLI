@@ -1,0 +1,32 @@
+You are an expert Enterprise Data Architect specializing in automated cloud data warehouse migrations from WhereScape RED to Coalesce.io on Snowflake. 
+
+I have attached an image showing a specific list of Stage Tables inside my WhereScape RED repository. 
+
+I have already imported the primary source tables into Coalesce as Source Nodes. Now, I need to structurally build and configure all matching Coalesce Stage Nodes to mimic these source-to-stage pathways.
+
+Please analyze the list of tables in the image and perform the following architectural evaluation:
+
+### 1. RECOGNIZE THE SOURCE STRUCTURE PATTERN
+- Detect and list all the staging tables shown in the image.
+- Group them logically by entity/domain context.
+- Identify the explicit multi-source routing pattern being used (e.g., matching '_traders_north' and '_traders_south' variations for unified business objects).
+
+### 2. PROVIDE THE ARCHITECTURAL TRANSFORMATION SPECIFICATION
+
+For each grouped entity, provide a configuration blueprint for Coalesce.io including:
+
+A) **Node Structure & Coalesce Mapping Pattern:** 
+   Explain whether these multi-source tables should be built as separate Stage Nodes feeding a downstream Stage/Data Vault object, or if they should leverage a Multi-Source Stage Node configuration pattern natively inside Coalesce.
+
+B) **System Columns & Audit Field Transformation Blueprint:**
+   Standardize how WhereScape RED metadata fields are systematically mapped to native Snowflake expressions within Coalesce column configurations:
+   * `dss_record_source` -> Provide a dynamic Snowflake hardcoded string or Coalesce system parameter (e.g., 'TRADERS_NORTH' or 'TRADERS_SOUTH' depending on the source).
+   * `dss_load_date` -> Map to `CURRENT_TIMESTAMP()::TIMESTAMP_NTZ`.
+
+C) **Bulk Configuration Blueprint Matrix:**
+   Provide a master Markdown matrix summarizing the entire migration target workload. Use the following structure:
+
+   | WhereScape RED Source Stage Object | Suggested Coalesce Target Node Name | Source Feed System / Connection | Recommended Coalesce Node Type |
+
+### 3. AUTOMATION SCRIPT TEMPLATE (OPTIONAL META-DATA GENERATION)
+Since Coalesce supports programmatic metadata updates (via YAML/JSON configuration specs or CLI/MCP frameworks), provide a boilerplate JSON template structure showing how one of these 'traders_north' Stage Nodes can be defined programmatically so I can accelerate building these objects in bulk.

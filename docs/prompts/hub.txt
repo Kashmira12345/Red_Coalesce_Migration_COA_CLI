@@ -1,0 +1,29 @@
+You are an expert Enterprise Data Architect specializing in Data Vault 2.0 migrations from WhereScape RED (v8.4.2.0) to Coalesce.io on Snowflake.
+
+I have attached an image showing the explicit list of Hub objects currently defined in my WhereScape RED repository. I have already successfully migrated the Source and Stage layers for these entities into Coalesce. 
+
+Now, I want to migrate this exact Hub architecture to Coalesce Desktop. Please analyze the list of Hubs in the image and provide a comprehensive migration strategy.
+
+### 1. HUB WORKLOAD RECOGNITION
+- Extract and list all 9 Hub tables visible in the image tree (from h_category to h_territory).
+- Note that these map back to the multi-source Stage layers we set up previously (e.g., handling '_traders_north' and '_traders_south' business keys).
+
+### 2. MIGRATION PATTERN AND MAPPING BLUEPRINT
+
+For this specific set of Hubs, provide the following architectural specification:
+
+A) **Hash Key Calculation Standards (Snowflake Optimized):**
+   Provide a standard rule for how the Primary Hub Hashes (`hk_h_...`) should compile in Snowflake (e.g., using `MD5_BINARY` or `SHA2_BINARY` on an uppercase, trimmed business key string with proper NULL handling to perfectly match how WhereScape RED generated them).
+
+B) **System Fields Mapping:**
+   Establish the rules for passing down metadata through the pipeline:
+   - `dss_record_source`: Passed directly from the upstream Stage Node.
+   - `dss_load_date`: Passed from the Stage Node to preserve the original loading time window across the architecture.
+
+C) **Master Hub Migration Tracking Matrix:**
+   Provide a comprehensive Markdown table summarizing the configuration details required for each Hub:
+
+   | WhereScape RED Hub Table | Target Coalesce Node Name | Core Business Key Column(s) | Primary Hash Key Column | System Audit Columns |
+
+### 3. INDIVIDUAL NODE CONFIGURATION TEMPLATE
+To kickstart the migration, pick one core hub from the list (such as `h_customer` or `h_order`) and provide a detailed step-by-step example showing exactly how to configure its columns, source mappings, and distinct/deduplication settings using Coalesce Desktop's standard Hub Node Type framework.
